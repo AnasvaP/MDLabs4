@@ -17,10 +17,10 @@ class ArchiveTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = UITableView.automaticDimension
         self.tableView.rowHeight = UITableView.automaticDimension
         
-        parseJSON.onCompletion = {currentdata in
-            self.countOfBooks = currentdata.title.count
+        parseJSON.onCompletion = { currentData in
+            self.countOfBooks = currentData.title.count
            }
-        parseJSON.getData()
+        parseJSON.getData(forResource: "BooksList")
     }
 
     // MARK: - Table view data source
@@ -35,20 +35,20 @@ class ArchiveTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! TableCell
-        parseJSON.onCompletion = {currentdata in
-            if currentdata.title[indexPath.row] == "" { cell.titleNameOutlet.text = "-"}
-            else{ cell.titleNameOutlet.text = currentdata.title[indexPath.row] }
+        parseJSON.onCompletion = {currentData in
+            if currentData.title[indexPath.row] == "" { cell.titleNameOutlet.text = "-"}
+            else{ cell.titleNameOutlet.text = currentData.title[indexPath.row] }
             
-            if currentdata.image[indexPath.row] == "" { cell.imageOutlet.image = UIImage(named: "defaultImage") }
-            else{ cell.imageOutlet.image = UIImage(named: currentdata.image[indexPath.row]) }
+            if currentData.image[indexPath.row] == "" { cell.imageOutlet.image = UIImage(named: "defaultImage") }
+            else{ cell.imageOutlet.image = UIImage(named: currentData.image[indexPath.row]) }
             
-            if currentdata.subtitle[indexPath.row] == "" { cell.subtitleOutlet.text = "no subtitle"}
-            else{ cell.subtitleOutlet.text = currentdata.subtitle[indexPath.row] }
+            if currentData.subtitle[indexPath.row] == "" { cell.subtitleOutlet.text = "no subtitle"}
+            else{ cell.subtitleOutlet.text = currentData.subtitle[indexPath.row] }
 
-            cell.priceOutlet.text = currentdata.price[indexPath.row]
-            cell.isbn13Outlet.text = currentdata.isbn13[indexPath.row]
+            cell.priceOutlet.text = currentData.price[indexPath.row]
+            cell.isbn13Outlet.text = currentData.isbn13[indexPath.row]
            }
-        parseJSON.getData()
+        parseJSON.getData(forResource: "BooksList")
         return cell
     }
     
@@ -56,7 +56,6 @@ class ArchiveTableViewController: UITableViewController {
     {
         return UITableView.automaticDimension
     }
-    
 }
 
 class TableCell: UITableViewCell {

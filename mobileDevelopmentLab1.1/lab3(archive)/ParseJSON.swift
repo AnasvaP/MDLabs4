@@ -11,12 +11,12 @@ class ParseJSON {
     
     var onCompletion : ( (currentData) -> Void )?
     
-    func getData(){
-        if let path = Bundle.main.path(forResource: "BooksList", ofType: "txt") {
+    func getData(forResource resource : String){
+        if let path = Bundle.main.path(forResource: resource, ofType: "txt") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                if let currentdata = self.parseJSON(withData: data){
-                    self.onCompletion?(currentdata)
+                if let currenData = self.parseJSON(withData: data){
+                    self.onCompletion?(currenData)
                 }
             } catch let error {
                 print("parse error: \(error.localizedDescription)")
@@ -27,13 +27,24 @@ class ParseJSON {
     }
     
     func parseJSON(withData data: Data) -> currentData? {
-        let decoder = JSONDecoder()
+        let decoder1 = JSONDecoder()
         do {
-            let fileData = try decoder.decode(Github.self, from: data)
-            guard let currentFileData = currentData(model: fileData) else {
+            let fileShortData = try decoder1.decode(Github.self, from: data)
+            let fileDetailedData = try decoder1.decode(NewGithub.self, from: data)
+            if let currentData = currentData(model: fileShortData, newModel: fileDetailedData){
+                
+                for i in currentData.title{
+                    print("+++ ",i)
+                }
+                
+                for i in currentData.detaileTitle{
+                    print("--- ",i)
+                }
+                
+                return currentData
+            } else {
                 return nil
             }
-            return currentFileData
         } catch let error as NSError {
             print(error.localizedDescription)
         }

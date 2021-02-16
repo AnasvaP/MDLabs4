@@ -13,6 +13,17 @@
 		F9153C5425CFE90B009710DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9153C5225CFE90B009710DC /* Main.storyboard */; };
 		F9153C5625CFE90E009710DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9153C5525CFE90E009710DC /* Assets.xcassets */; };
 		F9153C5925CFE90E009710DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9153C5725CFE90E009710DC /* LaunchScreen.storyboard */; };
+		F9249F2B25DC1CD50096C0B0 /* 9780321862969.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2125DC1CD40096C0B0 /* 9780321862969.txt */; };
+		F9249F2C25DC1CD50096C0B0 /* 9781449342753.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */; };
+		F9249F2D25DC1CD50096C0B0 /* 9780321856715.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2325DC1CD40096C0B0 /* 9780321856715.txt */; };
+		F9249F2E25DC1CD50096C0B0 /* 9781430237105.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2425DC1CD50096C0B0 /* 9781430237105.txt */; };
+		F9249F2F25DC1CD50096C0B0 /* 9781118841471.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2525DC1CD50096C0B0 /* 9781118841471.txt */; };
+		F9249F3025DC1CD50096C0B0 /* 9781430245124.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2625DC1CD50096C0B0 /* 9781430245124.txt */; };
+		F9249F3125DC1CD50096C0B0 /* 9781430236054.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2725DC1CD50096C0B0 /* 9781430236054.txt */; };
+		F9249F3225DC1CD50096C0B0 /* 9781430238072.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2825DC1CD50096C0B0 /* 9781430238072.txt */; };
+		F9249F3325DC1CD50096C0B0 /* 9781430260226.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2925DC1CD50096C0B0 /* 9781430260226.txt */; };
+		F9249F3425DC1CD50096C0B0 /* 9781449308360.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2A25DC1CD50096C0B0 /* 9781449308360.txt */; };
+		F9249F3725DC20100096C0B0 /* detailAboutBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */; };
 		F93C99A225DA9E0200825F74 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99A125DA9E0200825F74 /* model.swift */; };
 		F93C99A525DA9EC500825F74 /* currentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99A425DA9EC500825F74 /* currentData.swift */; };
 		F93C99A925DAA0BC00825F74 /* BooksList.txt in Resources */ = {isa = PBXBuildFile; fileRef = F93C99A825DAA0BC00825F74 /* BooksList.txt */; };
@@ -32,6 +43,17 @@
 		F9153C5525CFE90E009710DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9153C5825CFE90E009710DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9153C5A25CFE90E009710DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9249F2125DC1CD40096C0B0 /* 9780321862969.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9780321862969.txt; sourceTree = "<group>"; };
+		F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781449342753.txt; sourceTree = "<group>"; };
+		F9249F2325DC1CD40096C0B0 /* 9780321856715.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9780321856715.txt; sourceTree = "<group>"; };
+		F9249F2425DC1CD50096C0B0 /* 9781430237105.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430237105.txt; sourceTree = "<group>"; };
+		F9249F2525DC1CD50096C0B0 /* 9781118841471.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781118841471.txt; sourceTree = "<group>"; };
+		F9249F2625DC1CD50096C0B0 /* 9781430245124.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430245124.txt; sourceTree = "<group>"; };
+		F9249F2725DC1CD50096C0B0 /* 9781430236054.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430236054.txt; sourceTree = "<group>"; };
+		F9249F2825DC1CD50096C0B0 /* 9781430238072.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430238072.txt; sourceTree = "<group>"; };
+		F9249F2925DC1CD50096C0B0 /* 9781430260226.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430260226.txt; sourceTree = "<group>"; };
+		F9249F2A25DC1CD50096C0B0 /* 9781449308360.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781449308360.txt; sourceTree = "<group>"; };
+		F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailAboutBookViewController.swift; sourceTree = "<group>"; };
 		F93C99A125DA9E0200825F74 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		F93C99A425DA9EC500825F74 /* currentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentData.swift; sourceTree = "<group>"; };
 		F93C99A825DAA0BC00825F74 /* BooksList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BooksList.txt; sourceTree = "<group>"; };
@@ -76,6 +98,7 @@
 				F9153C5025CFE90B009710DC /* ViewController.swift */,
 				F93C999725DA901100825F74 /* lab2(drawing) */,
 				F93C999825DA903600825F74 /* lab3(archive) */,
+				F9249F2025DC1CB70096C0B0 /* lab4 */,
 				F9153C5525CFE90E009710DC /* Assets.xcassets */,
 				F9153C5725CFE90E009710DC /* LaunchScreen.storyboard */,
 				F9153C5A25CFE90E009710DC /* Info.plist */,
@@ -83,6 +106,32 @@
 				F9153C4E25CFE90B009710DC /* SceneDelegate.swift */,
 			);
 			path = mobileDevelopmentLab1.1;
+			sourceTree = "<group>";
+		};
+		F9249F1F25DC1C8A0096C0B0 /* additionalFiles(abouBooks) */ = {
+			isa = PBXGroup;
+			children = (
+				F9249F2325DC1CD40096C0B0 /* 9780321856715.txt */,
+				F9249F2125DC1CD40096C0B0 /* 9780321862969.txt */,
+				F9249F2525DC1CD50096C0B0 /* 9781118841471.txt */,
+				F9249F2725DC1CD50096C0B0 /* 9781430236054.txt */,
+				F9249F2425DC1CD50096C0B0 /* 9781430237105.txt */,
+				F9249F2825DC1CD50096C0B0 /* 9781430238072.txt */,
+				F9249F2625DC1CD50096C0B0 /* 9781430245124.txt */,
+				F9249F2925DC1CD50096C0B0 /* 9781430260226.txt */,
+				F9249F2A25DC1CD50096C0B0 /* 9781449308360.txt */,
+				F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */,
+			);
+			path = "additionalFiles(abouBooks)";
+			sourceTree = "<group>";
+		};
+		F9249F2025DC1CB70096C0B0 /* lab4 */ = {
+			isa = PBXGroup;
+			children = (
+				F9249F1F25DC1C8A0096C0B0 /* additionalFiles(abouBooks) */,
+				F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */,
+			);
+			path = lab4;
 			sourceTree = "<group>";
 		};
 		F93C999725DA901100825F74 /* lab2(drawing) */ = {
@@ -164,10 +213,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9249F3325DC1CD50096C0B0 /* 9781430260226.txt in Resources */,
 				F9153C5925CFE90E009710DC /* LaunchScreen.storyboard in Resources */,
+				F9249F3125DC1CD50096C0B0 /* 9781430236054.txt in Resources */,
+				F9249F2E25DC1CD50096C0B0 /* 9781430237105.txt in Resources */,
+				F9249F2D25DC1CD50096C0B0 /* 9780321856715.txt in Resources */,
+				F9249F3425DC1CD50096C0B0 /* 9781449308360.txt in Resources */,
 				F93C99A925DAA0BC00825F74 /* BooksList.txt in Resources */,
+				F9249F2F25DC1CD50096C0B0 /* 9781118841471.txt in Resources */,
+				F9249F3025DC1CD50096C0B0 /* 9781430245124.txt in Resources */,
 				F9153C5625CFE90E009710DC /* Assets.xcassets in Resources */,
 				F9153C5425CFE90B009710DC /* Main.storyboard in Resources */,
+				F9249F3225DC1CD50096C0B0 /* 9781430238072.txt in Resources */,
+				F9249F2B25DC1CD50096C0B0 /* 9780321862969.txt in Resources */,
+				F9249F2C25DC1CD50096C0B0 /* 9781449342753.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F93C99B025DAC73E00825F74 /* ArchiveTableViewController.swift in Sources */,
+				F9249F3725DC20100096C0B0 /* detailAboutBookViewController.swift in Sources */,
 				F9153C5125CFE90B009710DC /* ViewController.swift in Sources */,
 				F93C99A525DA9EC500825F74 /* currentData.swift in Sources */,
 				F9153C4D25CFE90B009710DC /* AppDelegate.swift in Sources */,

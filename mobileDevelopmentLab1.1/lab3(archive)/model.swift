@@ -17,3 +17,11 @@ struct Book: Codable {
     let title, subtitle, isbn13, price: String
     let image: String
 }
+
+
+// MARK: - Github new
+struct NewGithub: Codable {
+    let title, subtitle, authors, publisher: String
+    let isbn13, pages, year, rating: String
+    let desc, price, image: String
+}
