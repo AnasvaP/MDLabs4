@@ -97,7 +97,6 @@
 				F9153C5025CFE90B009710DC /* ViewController.swift */,
 				F93C999725DA901100825F74 /* lab2(drawing) */,
 				F93C999825DA903600825F74 /* lab3and4(archive+detaile) */,
-				F9249F2025DC1CB70096C0B0 /* lab4 */,
 				F9153C5525CFE90E009710DC /* Assets.xcassets */,
 				F9153C5725CFE90E009710DC /* LaunchScreen.storyboard */,
 				F9153C5A25CFE90E009710DC /* Info.plist */,
@@ -105,32 +104,6 @@
 				F9153C4E25CFE90B009710DC /* SceneDelegate.swift */,
 			);
 			path = mobileDevelopmentLab1.1;
-			sourceTree = "<group>";
-		};
-		F9249F1F25DC1C8A0096C0B0 /* additionalFiles(abouBooks) */ = {
-			isa = PBXGroup;
-			children = (
-				F9249F2325DC1CD40096C0B0 /* 9780321856715.txt */,
-				F9249F2125DC1CD40096C0B0 /* 9780321862969.txt */,
-				F9249F2525DC1CD50096C0B0 /* 9781118841471.txt */,
-				F9249F2725DC1CD50096C0B0 /* 9781430236054.txt */,
-				F9249F2425DC1CD50096C0B0 /* 9781430237105.txt */,
-				F9249F2825DC1CD50096C0B0 /* 9781430238072.txt */,
-				F9249F2625DC1CD50096C0B0 /* 9781430245124.txt */,
-				F9249F2925DC1CD50096C0B0 /* 9781430260226.txt */,
-				F9249F2A25DC1CD50096C0B0 /* 9781449308360.txt */,
-				F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */,
-			);
-			path = "additionalFiles(abouBooks)";
-			sourceTree = "<group>";
-		};
-		F9249F2025DC1CB70096C0B0 /* lab4 */ = {
-			isa = PBXGroup;
-			children = (
-				F9249F1F25DC1C8A0096C0B0 /* additionalFiles(abouBooks) */,
-				F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */,
-			);
-			path = lab4;
 			sourceTree = "<group>";
 		};
 		F93C999725DA901100825F74 /* lab2(drawing) */ = {
@@ -146,11 +119,12 @@
 		F93C999825DA903600825F74 /* lab3and4(archive+detaile) */ = {
 			isa = PBXGroup;
 			children = (
+				F957C8E625DD106E007B9F17 /* additionalFiles */,
 				F957C8E225DD0EA9007B9F17 /* view */,
 				F957C8E125DD0EA3007B9F17 /* model+parse */,
 				F957C8E325DD0EAE007B9F17 /* controller */,
 				F93C99AF25DAC73E00825F74 /* ArchiveTableViewController.swift */,
-				F93C99A825DAA0BC00825F74 /* BooksList.txt */,
+				F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */,
 			);
 			path = "lab3and4(archive+detaile)";
 			sourceTree = "<group>";
@@ -178,6 +152,24 @@
 			children = (
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		F957C8E625DD106E007B9F17 /* additionalFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F93C99A825DAA0BC00825F74 /* BooksList.txt */,
+				F9249F2325DC1CD40096C0B0 /* 9780321856715.txt */,
+				F9249F2125DC1CD40096C0B0 /* 9780321862969.txt */,
+				F9249F2525DC1CD50096C0B0 /* 9781118841471.txt */,
+				F9249F2725DC1CD50096C0B0 /* 9781430236054.txt */,
+				F9249F2425DC1CD50096C0B0 /* 9781430237105.txt */,
+				F9249F2825DC1CD50096C0B0 /* 9781430238072.txt */,
+				F9249F2625DC1CD50096C0B0 /* 9781430245124.txt */,
+				F9249F2925DC1CD50096C0B0 /* 9781430260226.txt */,
+				F9249F2A25DC1CD50096C0B0 /* 9781449308360.txt */,
+				F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */,
+			);
+			path = additionalFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
