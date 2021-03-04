@@ -7,16 +7,16 @@
 
 import Foundation
 
-class ParseJSON {
+class ParseBooksListJSON {
     
     var onCompletion : ( (currentData) -> Void )?
     
     func getData(forResource resource : String){
-        if let path = Bundle.main.path(forResource: resource, ofType: "txt") {
+        if let path = Bundle.main.path(forResource: resource, ofType: "txt")  {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                if let currenData = self.parseJSON(withData: data){
-                    self.onCompletion?(currenData)
+                if let currentData = self.parseJSON(withData: data) {
+                    self.onCompletion?(currentData)
                 }
             } catch let error {
                 print("parse error: \(error.localizedDescription)")
@@ -27,26 +27,16 @@ class ParseJSON {
     }
     
     func parseJSON(withData data: Data) -> currentData? {
-        let decoder1 = JSONDecoder()
         do {
-            let fileShortData = try decoder1.decode(Github.self, from: data)
-            let fileDetailedData = try decoder1.decode(NewGithub.self, from: data)
-            if let currentData = currentData(model: fileShortData, newModel: fileDetailedData){
-                
-                for i in currentData.title{
-                    print("+++ ",i)
-                }
-                
-                for i in currentData.detaileTitle{
-                    print("--- ",i)
-                }
-                
+            let fileData = try JSONDecoder().decode(Github.self, from: data)
+            if let currentData = currentData(model: fileData) {
                 return currentData
             } else {
                 return nil
             }
+            
         } catch let error as NSError {
-            print(error.localizedDescription)
+            print("error = ", error)
         }
         return nil
     }

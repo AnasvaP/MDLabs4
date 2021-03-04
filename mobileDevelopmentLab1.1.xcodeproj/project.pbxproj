@@ -27,11 +27,13 @@
 		F93C99A225DA9E0200825F74 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99A125DA9E0200825F74 /* model.swift */; };
 		F93C99A525DA9EC500825F74 /* currentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99A425DA9EC500825F74 /* currentData.swift */; };
 		F93C99A925DAA0BC00825F74 /* BooksList.txt in Resources */ = {isa = PBXBuildFile; fileRef = F93C99A825DAA0BC00825F74 /* BooksList.txt */; };
-		F93C99AC25DAA10C00825F74 /* ParseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99AB25DAA10C00825F74 /* ParseJSON.swift */; };
+		F93C99AC25DAA10C00825F74 /* ParseBooksListJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99AB25DAA10C00825F74 /* ParseBooksListJSON.swift */; };
 		F93C99B025DAC73E00825F74 /* ArchiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99AF25DAC73E00825F74 /* ArchiveTableViewController.swift */; };
+		F960AE8725EFFD620009FE53 /* ParseDetailedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960AE8625EFFD610009FE53 /* ParseDetailedJSON.swift */; };
 		F966800925D6E2E000998D5C /* DrawingArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966800825D6E2E000998D5C /* DrawingArcView.swift */; };
 		F975833D25D2EA0C00481377 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975833C25D2EA0C00481377 /* DrawingViewController.swift */; };
 		F975834125D2EBC400481377 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975834025D2EBC400481377 /* DrawingView.swift */; };
+		F9DE36E225EFD16100FC279B /* currentData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE36E125EFD16100FC279B /* currentData2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,11 +59,13 @@
 		F93C99A125DA9E0200825F74 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		F93C99A425DA9EC500825F74 /* currentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentData.swift; sourceTree = "<group>"; };
 		F93C99A825DAA0BC00825F74 /* BooksList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BooksList.txt; sourceTree = "<group>"; };
-		F93C99AB25DAA10C00825F74 /* ParseJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseJSON.swift; sourceTree = "<group>"; };
+		F93C99AB25DAA10C00825F74 /* ParseBooksListJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseBooksListJSON.swift; sourceTree = "<group>"; };
 		F93C99AF25DAC73E00825F74 /* ArchiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTableViewController.swift; sourceTree = "<group>"; };
+		F960AE8625EFFD610009FE53 /* ParseDetailedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseDetailedJSON.swift; sourceTree = "<group>"; };
 		F966800825D6E2E000998D5C /* DrawingArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingArcView.swift; sourceTree = "<group>"; };
 		F975833C25D2EA0C00481377 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		F975834025D2EBC400481377 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		F9DE36E125EFD16100FC279B /* currentData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentData2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +138,9 @@
 			children = (
 				F93C99A125DA9E0200825F74 /* model.swift */,
 				F93C99A425DA9EC500825F74 /* currentData.swift */,
-				F93C99AB25DAA10C00825F74 /* ParseJSON.swift */,
+				F9DE36E125EFD16100FC279B /* currentData2.swift */,
+				F93C99AB25DAA10C00825F74 /* ParseBooksListJSON.swift */,
+				F960AE8625EFFD610009FE53 /* ParseDetailedJSON.swift */,
 			);
 			path = "model+parse";
 			sourceTree = "<group>";
@@ -254,14 +260,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F93C99B025DAC73E00825F74 /* ArchiveTableViewController.swift in Sources */,
+				F960AE8725EFFD620009FE53 /* ParseDetailedJSON.swift in Sources */,
 				F9249F3725DC20100096C0B0 /* detailAboutBookViewController.swift in Sources */,
 				F9153C5125CFE90B009710DC /* ViewController.swift in Sources */,
 				F93C99A525DA9EC500825F74 /* currentData.swift in Sources */,
+				F9DE36E225EFD16100FC279B /* currentData2.swift in Sources */,
 				F9153C4D25CFE90B009710DC /* AppDelegate.swift in Sources */,
 				F966800925D6E2E000998D5C /* DrawingArcView.swift in Sources */,
 				F975834125D2EBC400481377 /* DrawingView.swift in Sources */,
 				F9153C4F25CFE90B009710DC /* SceneDelegate.swift in Sources */,
-				F93C99AC25DAA10C00825F74 /* ParseJSON.swift in Sources */,
+				F93C99AC25DAA10C00825F74 /* ParseBooksListJSON.swift in Sources */,
 				F93C99A225DA9E0200825F74 /* model.swift in Sources */,
 				F975833D25D2EA0C00481377 /* DrawingViewController.swift in Sources */,
 			);

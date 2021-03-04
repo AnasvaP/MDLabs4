@@ -12,25 +12,44 @@ class detailAboutBookViewController: UIViewController {
     @IBOutlet weak var titleOutlet: UILabel!
     @IBOutlet weak var imageOfBookOutlet: UIImageView!
     @IBOutlet weak var subtitleOutlet: UILabel!
+    @IBOutlet weak var authorsOutlet: UILabel!
+    @IBOutlet weak var publisherOutlet: UILabel!
+    @IBOutlet weak var isbn13Outlet: UILabel!
+    @IBOutlet weak var pagesOutlet: UILabel!
+    @IBOutlet weak var yearOutlet: UILabel!
+    @IBOutlet weak var ratingOutlet: UILabel!
+    @IBOutlet weak var descriptionOutlet: UILabel!
+    @IBOutlet weak var priceOutlet: UILabel!
     
-    let booksId: [String] = ["9780321856715","9780321862969","9781118841471","9781430236054","9781430237105","9781430238072","9781430245124","9781430260226","9781449308360","9781449342753" ]
-    var countOfBooks = Int()
-    let parseJSON = ParseJSON()
+    let archiveVC = ArchiveTableViewController()
+    var parseBooksJSON = ParseBooksListJSON()
+    let parseJSON = ParseDetailedJSON()
+    var selectedValue = String()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        parseJSON.onCompletion = {currentData in
-            self.countOfBooks = currentData.title.count
-       }
-        parseJSON.getData(forResource: "BooksList")
-        
-        for i in 1..<countOfBooks{
-            parseJSON.onCompletion = {currentData in
-                self.titleOutlet.text = currentData.detaileTitle
+        main()
+    }
+    
+    func main(){
+            self.parseJSON.onCompletion = { currentData2 in
+                if currentData2.title ==  self.selectedValue {
+                    self.titleOutlet.text = currentData2.title
+                    self.subtitleOutlet.text = currentData2.subtitle
+                    self.imageOfBookOutlet.image = UIImage(named: currentData2.image)
+                    self.authorsOutlet.text = currentData2.authors
+                    self.publisherOutlet.text = currentData2.publisher
+                    self.isbn13Outlet.text = currentData2.isbn13
+                    self.pagesOutlet.text = currentData2.pages
+                    self.yearOutlet.text = currentData2.year
+                    self.ratingOutlet.text = currentData2.rating
+                    self.descriptionOutlet.text = currentData2.desc
+                    self.priceOutlet.text = currentData2.price
+                }
            }
-            parseJSON.getData(forResource: booksId[i])
+            for i in 1..<self.archiveVC.booksId.count{
+                self.parseJSON.getData(forResource2: self.archiveVC.booksId[i])
         }
     }
     
-    
+
 }
