@@ -22,6 +22,36 @@ struct currentData {
             self.isbn13.append( model.books[i].isbn13 )
             self.price.append( model.books[i].price )
             self.image.append( model.books[i].image )
-      }
+            }
+    }
+}
+
+class DataFromBooksList {
+    
+    let parseBooksJSON = ParseBooksListJSON()
+    
+    func main() -> ([[String]]) {
+        
+        var titles = [String]()
+        var subtitles = [String]()
+        var isbn13s = [String]()
+        var prices = [String]()
+        var images = [String]()
+        
+        parseBooksJSON.onCompletion = { currentData in
+            titles = currentData.title
+            subtitles = currentData.subtitle
+            isbn13s = currentData.isbn13
+            prices = currentData.price
+            images = currentData.image
+        }
+    parseBooksJSON.getData(forResource: "BooksList")
+        
+        for i in 0..<images.count{
+            if images[i] == "" {
+                images[i] = "defaultImage"
+            }
+        }
+        return [titles, subtitles, isbn13s, prices, images]
     }
 }
