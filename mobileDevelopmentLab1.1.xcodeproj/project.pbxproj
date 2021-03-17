@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F902439026026193007E5083 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F902438F26026193007E5083 /* cell.xib */; };
 		F9153C4D25CFE90B009710DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9153C4C25CFE90B009710DC /* AppDelegate.swift */; };
 		F9153C4F25CFE90B009710DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9153C4E25CFE90B009710DC /* SceneDelegate.swift */; };
 		F9153C5125CFE90B009710DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9153C5025CFE90B009710DC /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F902438F26026193007E5083 /* cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
 		F9153C4925CFE90B009710DC /* mobileDevelopmentLab1.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileDevelopmentLab1.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9153C4C25CFE90B009710DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9153C4E25CFE90B009710DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				F9153C5225CFE90B009710DC /* Main.storyboard */,
+				F902438F26026193007E5083 /* cell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -159,8 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				F93C99AF25DAC73E00825F74 /* ArchiveTableViewController.swift */,
-				F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */,
 				F9ACF76725F10B3A0002D567 /* AddNewBookVC.swift */,
+				F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */,
 				F9834D7425F7ACAD00CA6FB3 /* TableCell.swift */,
 			);
 			path = controller;
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F902439026026193007E5083 /* cell.xib in Resources */,
 				F9249F3325DC1CD50096C0B0 /* 9781430260226.txt in Resources */,
 				F9153C5925CFE90E009710DC /* LaunchScreen.storyboard in Resources */,
 				F9249F3125DC1CD50096C0B0 /* 9781430236054.txt in Resources */,

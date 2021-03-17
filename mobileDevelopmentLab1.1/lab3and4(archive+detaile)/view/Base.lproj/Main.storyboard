@@ -267,7 +267,7 @@
                                     <outlet property="isbn13Outlet" destination="Tvf-bT-0hs" id="at1-Uz-pMq"/>
                                     <outlet property="priceOutlet" destination="hEg-zG-vWc" id="Cb5-NK-8ht"/>
                                     <outlet property="subtitleOutlet" destination="yqh-Gi-Ked" id="1wG-A5-Z5D"/>
-                                    <outlet property="titleNameOutlet" destination="okE-4l-6bi" id="lCw-xW-ptk"/>
+                                    <outlet property="titleNameOutlet" destination="okE-4l-6bi" id="wEE-PD-iDS"/>
                                     <segue destination="6aD-Q0-UA0" kind="show" id="x9f-U2-sFl"/>
                                 </connections>
                             </tableViewCell>
@@ -611,7 +611,13 @@
                             <constraint firstItem="evx-mT-loi" firstAttribute="height" secondItem="So3-kK-Ufj" secondAttribute="height" multiplier="1.9" priority="300" id="pul-tU-eaF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="detailes" id="O4m-lH-KqZ"/>
+                    <navigationItem key="navigationItem" title="detailes" id="O4m-lH-KqZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Pci-lh-nvV">
+                            <connections>
+                                <action selector="editBtn:" destination="6aD-Q0-UA0" id="d18-j4-REz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorsOutlet" destination="IOv-Gn-HYh" id="D3Q-4h-IIs"/>
                         <outlet property="descriptionOutlet" destination="YU5-vZ-NKy" id="hW1-au-LFW"/>
@@ -628,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulx-5F-PlN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3767" y="-378"/>
+            <point key="canvasLocation" x="3766.666666666667" y="-378.34821428571428"/>
         </scene>
         <!--books-->
         <scene sceneID="LSO-Rg-PvI">

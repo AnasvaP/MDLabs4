@@ -10,20 +10,17 @@ import UIKit
 class ArchiveTableViewController: UITableViewController, UISearchControllerDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var label: UILabel!
-    var parseBooksJSON = ParseBooksListJSON()
-    var parseDetJSON = ParseDetailedJSON()
-    var countOfBooks = Int()
     var search = UISearchController()
     var filteredData: [[String]] = [[],[],[],[],[]]
     var countOfFilteredBook: Int = 0
-    
-    let addNewBookVC = AddNewBookVC()
+    var index = Int()
     let dataFromBL = DataFromBooksList()
-    var data = [[String]]()
+    static var data: [[String]] = [[],[],[],[],[]]
     let booksId: [String] = ["BooksList","9780321856715","9780321862969","9781118841471","9781430236054","9781430237105","9781430238072","9781430245124","9781430260226","9781449308360","9781449342753" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.estimatedRowHeight = UITableView.automaticDimension
         self.tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
@@ -35,46 +32,40 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
         search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
         self.navigationItem.searchController = search
-        data = dataFromBL.main()
+        
+        ArchiveTableViewController.data = dataFromBL.main()
+        index = ArchiveTableViewController.data[0].count
         
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewBtn))
         self.navigationItem.rightBarButtonItem = addBtn
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
     }
 
     
     // MARK: - Additional func
     
-    func addMethod() {
-        data = dataFromBL.main()
-        let index = data[0].count
-        tableView.performBatchUpdates({
-            self.data[0].insert("new",at: index)
-            self.data[1].insert("new",at: index)
-            self.data[2].insert("new",at: index)
-            self.data[3].insert("new",at: index)
-            self.data[4].insert("defaultImage",at: index)
-            tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-        }, completion: { result in
-            self.tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .top, animated: true)
-        })
-    }
-    
     @objc func addNewBtn(){
         print("add")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddNewBookVC") as! AddNewBookVC
         self.navigationController?.pushViewController(vc, animated: true)
-        addMethod()
+        
+//        tableView.performBatchUpdates({
+//            print("from insert = ",AddNewBookVC.title)
+//            ArchiveTableViewController.data[0].insert(AddNewBookVC.title ,at: index)
+//            ArchiveTableViewController.data[1].insert(AddNewBookVC.subtitle ,at: index)
+//            ArchiveTableViewController.data[2].insert(AddNewBookVC.price,at: index)
+//            ArchiveTableViewController.data[3].insert("no value",at: index)
+//            ArchiveTableViewController.data[4].insert("defaultImage",at: index)
+//            tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+//        }, completion: { result in
+//            self.tableView.scrollToRow(at: IndexPath(row: self.index, section: 0), at: .top, animated: true)
+//            print("from completion = ",AddNewBookVC.title)
+//        })
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let destination = segue.destination as? detailAboutBookViewController {
                 let selectedRow = self.tableView.indexPathForSelectedRow!.row
-                destination.selectedValue = data[0][selectedRow]
+                destination.selectedValue = ArchiveTableViewController.data[0][selectedRow]
             }
     }
 }
@@ -92,7 +83,7 @@ extension ArchiveTableViewController {
         if isSearching() {
             return countOfFilteredBook
         }
-        return data[0].count
+        return ArchiveTableViewController.data[0].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,7 +92,7 @@ extension ArchiveTableViewController {
         if isSearching() {
             dataForCell = filteredData
         } else {
-            dataForCell = data
+            dataForCell = ArchiveTableViewController.data
         }
         cell.set(data: dataForCell, index: indexPath.row)
         return cell
@@ -116,7 +107,7 @@ extension ArchiveTableViewController {
         let swipe = UIContextualAction(style: .normal, title: "delete", handler: {(action, view, success) in
             tableView.performBatchUpdates({
                 for i in 0...4{
-                    self.data[i].remove(at: indexPath.row)
+                    ArchiveTableViewController.data[i].remove(at: indexPath.row)
                     }
                 tableView.deleteRows(at: [indexPath], with: .automatic)
             }, completion: nil )
@@ -143,14 +134,12 @@ extension ArchiveTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filteredData = [[],[],[],[],[]]
         countOfFilteredBook = 0
-        for i in 0..<data[0].count{
-            if  data[0][i].lowercased().contains(searchController.searchBar.text!.lowercased()){
+        for i in 0..<ArchiveTableViewController.data[0].count{
+            if  ArchiveTableViewController.data[0][i].lowercased().contains(searchController.searchBar.text!.lowercased()){
                 countOfFilteredBook += 1
-                filteredData[0].append( data[0][i])
-                filteredData[1].append( data[1][i])
-                filteredData[2].append( data[2][i])
-                filteredData[3].append( data[3][i])
-                filteredData[4].append( data[4][i])
+                for j in 0...4{
+                    filteredData[j].append( ArchiveTableViewController.data[j][i])
+                }
             }
         }
         if search.isActive && filteredData[0].count == 0 {

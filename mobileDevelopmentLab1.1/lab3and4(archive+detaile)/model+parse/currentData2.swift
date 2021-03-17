@@ -35,3 +35,38 @@ init?(model2: NewGithub) {
     self.isbn13 = model2.isbn13
     }
 }
+
+
+class DataDetailedLists {
+    
+    let parseDetailedJSON = ParseDetailedJSON()
+    
+    func main() -> ([[String]]) {
+        
+        var allData: [[String]] = [[],[],[],[],[],[],[],[],[],[],[]]
+        let archiveVC = ArchiveTableViewController()
+        parseDetailedJSON.onCompletion = { currentData2 in
+            allData[0].append(currentData2.title)
+            allData[1].append(currentData2.subtitle)
+            allData[2].append(currentData2.authors)
+            allData[3].append(currentData2.publisher)
+            allData[4].append(currentData2.isbn13)
+            allData[5].append(currentData2.pages)
+            allData[6].append(currentData2.year)
+            allData[7].append(currentData2.rating)
+            allData[8].append(currentData2.desc)
+            allData[9].append(currentData2.price)
+            allData[10].append(currentData2.image)
+        }
+        for i in 1..<archiveVC.booksId.count{
+            self.parseDetailedJSON.getData(forResource2: archiveVC.booksId[i])
+            }
+        
+        for i in 0..<allData[10].count{
+            if allData[10][i] == "" {
+                allData[10][i] = "defaultImage"
+            }
+        }
+        return allData
+    }
+}

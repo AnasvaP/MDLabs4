@@ -25,7 +25,6 @@ class TableCell: UITableViewCell {
     
     
     func set(data: [[String]], index: Int){
-        
         self.titleNameOutlet.text =  data[0][index]
         if data[4][index] == "" {
             self.imageOutlet.image = UIImage(named: "defaultImage")
