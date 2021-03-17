@@ -28,7 +28,7 @@ class detailAboutBookViewController: UIViewController {
     let dataFromLists = DataDetailedLists()
     var parseBooksJSON = ParseBooksListJSON()
     let parseJSON = ParseDetailedJSON()
-    var selectedValue = String()
+    static var selectedValue = String()
 
     override func viewDidLoad() {
         allData = dataFromLists.main()
@@ -37,7 +37,7 @@ class detailAboutBookViewController: UIViewController {
     
     func main(){
         for i in 0..<allData[1].count{
-            if allData[0][i] ==  self.selectedValue {
+            if allData[0][i] ==  detailAboutBookViewController.selectedValue {
                 self.titleOutlet.text = allData[0][i]
                 self.subtitleOutlet.text = allData[1][i]
                 if allData[10][i] == "" { self.imageOfBookOutlet.image = UIImage(named: "defaultImage") }

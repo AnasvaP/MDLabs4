@@ -20,6 +20,7 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib.init(nibName: "cell", bundle: nil), forCellReuseIdentifier: "reuseIdentifier")
         
         self.tableView.estimatedRowHeight = UITableView.automaticDimension
         self.tableView.rowHeight = UITableView.automaticDimension
@@ -36,37 +37,6 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
         ArchiveTableViewController.data = dataFromBL.main()
         index = ArchiveTableViewController.data[0].count
         
-        let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewBtn))
-        self.navigationItem.rightBarButtonItem = addBtn
-    }
-
-    
-    // MARK: - Additional func
-    
-    @objc func addNewBtn(){
-        print("add")
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddNewBookVC") as! AddNewBookVC
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-//        tableView.performBatchUpdates({
-//            print("from insert = ",AddNewBookVC.title)
-//            ArchiveTableViewController.data[0].insert(AddNewBookVC.title ,at: index)
-//            ArchiveTableViewController.data[1].insert(AddNewBookVC.subtitle ,at: index)
-//            ArchiveTableViewController.data[2].insert(AddNewBookVC.price,at: index)
-//            ArchiveTableViewController.data[3].insert("no value",at: index)
-//            ArchiveTableViewController.data[4].insert("defaultImage",at: index)
-//            tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-//        }, completion: { result in
-//            self.tableView.scrollToRow(at: IndexPath(row: self.index, section: 0), at: .top, animated: true)
-//            print("from completion = ",AddNewBookVC.title)
-//        })
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let destination = segue.destination as? detailAboutBookViewController {
-                let selectedRow = self.tableView.indexPathForSelectedRow!.row
-                destination.selectedValue = ArchiveTableViewController.data[0][selectedRow]
-            }
     }
 }
     
@@ -115,6 +85,13 @@ extension ArchiveTableViewController {
         swipe.image = #imageLiteral(resourceName: "leftSwipe@x3")
         swipe.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         return UISwipeActionsConfiguration(actions: [swipe])
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailAboutBookViewController") as! detailAboutBookViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        let selectedRow = self.tableView.indexPathForSelectedRow!.row
+        detailAboutBookViewController.selectedValue = ArchiveTableViewController.data[0][selectedRow]
     }
 }
 

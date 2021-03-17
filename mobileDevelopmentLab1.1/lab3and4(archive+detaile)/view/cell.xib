@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="177" id="pUs-BF-QAS" customClass="TableCell" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="177" id="pUs-BF-QAS" customClass="TableCell" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="177"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pUs-BF-QAS" id="837-c3-tjA">
@@ -91,14 +91,15 @@
                     <constraint firstItem="R4i-Ak-5xh" firstAttribute="centerY" secondItem="8cp-xM-5Gr" secondAttribute="centerY" id="rWH-dO-AzE"/>
                 </constraints>
             </tableViewCellContentView>
+            <gestureRecognizers/>
             <connections>
-                <outlet property="imageOutlet" destination="8cp-xM-5Gr" id="qV4-ac-OzO"/>
-                <outlet property="isbn13Outlet" destination="5sS-2J-28F" id="Mqz-uZ-DVm"/>
-                <outlet property="priceOutlet" destination="lwI-mt-A4x" id="qVI-s5-43D"/>
-                <outlet property="subtitleOutlet" destination="YnR-CV-YAM" id="Z6N-a8-jVf"/>
-                <outlet property="titleNameOutlet" destination="KeD-gV-4NI" id="8hr-hH-uU4"/>
+                <outlet property="imageOutlet" destination="8cp-xM-5Gr" id="Euf-8i-YCK"/>
+                <outlet property="isbn13Outlet" destination="lwI-mt-A4x" id="QZL-ac-KtH"/>
+                <outlet property="priceOutlet" destination="5sS-2J-28F" id="3C6-6K-oS1"/>
+                <outlet property="subtitleOutlet" destination="YnR-CV-YAM" id="CIe-nT-aPD"/>
+                <outlet property="titleNameOutlet" destination="KeD-gV-4NI" id="2it-4q-iCJ"/>
             </connections>
-            <point key="canvasLocation" x="-107" y="-239"/>
+            <point key="canvasLocation" x="-107.24637681159422" y="-239.39732142857142"/>
         </tableViewCell>
     </objects>
 </document>
