@@ -39,12 +39,12 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
         navigationItem.searchController?.searchBar.placeholder = "Search by title"
         
         ArchiveTableViewController.data = dataFromBL.main()
-        index = ArchiveTableViewController.data[0].count
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(insertRow))
     }
     
     @objc func insertRow() {
-        let index = self.index
+        
+        let index = ArchiveTableViewController.data[0].count
         self.tableView.performBatchUpdates({
             ArchiveTableViewController.data[0].insert(AddNewBookVC.title ,at: index)
             ArchiveTableViewController.data[1].insert(AddNewBookVC.subtitle ,at: index)
@@ -55,7 +55,6 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
         }, completion: { result in
             self.tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: true)
         })
-
     }
 }
     

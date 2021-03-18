@@ -23,11 +23,7 @@ class detailAboutBookViewController: UIViewController {
     @IBOutlet weak var priceOutlet: UILabel!
     var allData: [[String]] = [[],[],[],[],[],[],[],[],[],[],[]]
 
-    
-    let archiveVC = ArchiveTableViewController()
     let dataFromLists = DataDetailedLists()
-    var parseBooksJSON = ParseBooksListJSON()
-    let parseJSON = ParseDetailedJSON()
     static var selectedValue = String()
 
     override func viewDidLoad() {

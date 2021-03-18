@@ -186,7 +186,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Books" id="Tzf-Ap-Qao">
-                        <barButtonItem key="leftBarButtonItem" title="add" id="olK-qq-ILs">
+                        <barButtonItem key="leftBarButtonItem" title="add row" id="olK-qq-ILs">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="yY1-Zk-LOM" kind="show" id="L1C-WT-OIF"/>
@@ -200,7 +200,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhM-Tn-pOX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2888" y="-778"/>
+            <point key="canvasLocation" x="2886.9565217391305" y="-778.125"/>
         </scene>
         <!--new book-->
         <scene sceneID="Kig-Dr-1Xh">
@@ -285,10 +285,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="new book" id="KcI-l2-xjI"/>
                     <connections>
-                        <outlet property="errorLabel" destination="Qhi-fA-H4i" id="JY1-Gh-fyR"/>
                         <outlet property="priceTF" destination="82T-uE-kZ6" id="NW3-ts-WFb"/>
                         <outlet property="subtitleTF" destination="Mg2-68-NNs" id="lbq-QA-ZXc"/>
                         <outlet property="titleTF" destination="Zhm-cy-WEt" id="T3y-zb-Kht"/>
+                        <outlet property="warningLabel" destination="Qhi-fA-H4i" id="pZF-rf-dap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3G0-Nd-8R0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -531,13 +531,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="detailes" id="O4m-lH-KqZ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Pci-lh-nvV">
-                            <connections>
-                                <action selector="editBtn:" destination="6aD-Q0-UA0" id="d18-j4-REz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="detailes" id="O4m-lH-KqZ"/>
                     <connections>
                         <outlet property="authorsOutlet" destination="IOv-Gn-HYh" id="D3Q-4h-IIs"/>
                         <outlet property="descriptionOutlet" destination="YU5-vZ-NKy" id="hW1-au-LFW"/>
@@ -554,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulx-5F-PlN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766.666666666667" y="-378.34821428571428"/>
+            <point key="canvasLocation" x="3767" y="-384"/>
         </scene>
         <!--books-->
         <scene sceneID="LSO-Rg-PvI">
