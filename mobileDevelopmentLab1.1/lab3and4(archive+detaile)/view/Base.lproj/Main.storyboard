@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhK-Vq-Cps">
-                                <rect key="frame" x="121.00000000000001" y="417.66666666666669" width="172.33333333333337" height="61"/>
+                                <rect key="frame" x="121" y="417.66666666666669" width="172.33333333333337" height="61"/>
                                 <string key="text">Полюхович Анастасія
 Група ІО-82 
 ЗК ІО-8217  </string>
@@ -178,16 +178,6 @@
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="bl5-e4-vlc" customClass="TableCell" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bl5-e4-vlc" id="lOw-MZ-WdK">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="FUR-ls-rIp" id="JIa-BP-OUj"/>
@@ -314,10 +304,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0p-ti-t9p">
-                                <rect key="frame" x="0.0" y="44" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evx-mT-loi">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1702.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="985.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-o8-EIo">
                                                 <rect key="frame" x="115" y="194.33333333333334" width="294" height="351.66666666666663"/>
@@ -489,6 +479,7 @@
                                             <constraint firstItem="EJE-Px-7R3" firstAttribute="top" secondItem="4W8-B8-J1c" secondAttribute="bottom" constant="20" id="4Mu-vP-pYC"/>
                                             <constraint firstItem="Llg-sk-juK" firstAttribute="top" secondItem="t0Y-xd-iom" secondAttribute="top" id="8Mj-fl-jW1"/>
                                             <constraint firstItem="fmt-hO-exu" firstAttribute="top" secondItem="iUq-WG-mKI" secondAttribute="top" id="DUl-kI-aDp"/>
+                                            <constraint firstAttribute="height" constant="985.66666666666663" id="LFr-Os-HwB"/>
                                             <constraint firstItem="GeO-6N-W5p" firstAttribute="top" secondItem="AYG-by-sE3" secondAttribute="top" id="OzR-HN-lef"/>
                                             <constraint firstItem="Rc3-EN-nQD" firstAttribute="top" secondItem="djn-Fg-3Ce" secondAttribute="top" id="SuG-BN-cPU"/>
                                             <constraint firstItem="vHs-Om-z5P" firstAttribute="top" secondItem="jPK-w2-JmX" secondAttribute="top" id="Upy-4I-udj"/>
@@ -507,12 +498,10 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="evx-mT-loi" secondAttribute="trailing" id="A4n-Qe-6aG"/>
                                     <constraint firstItem="evx-mT-loi" firstAttribute="top" secondItem="M0p-ti-t9p" secondAttribute="top" id="PJb-HE-IbN"/>
-                                    <constraint firstAttribute="bottom" secondItem="evx-mT-loi" secondAttribute="bottom" id="X9B-ZK-YCG"/>
+                                    <constraint firstAttribute="trailing" secondItem="evx-mT-loi" secondAttribute="trailing" id="p24-f5-LGg"/>
                                     <constraint firstItem="evx-mT-loi" firstAttribute="leading" secondItem="M0p-ti-t9p" secondAttribute="leading" id="qw0-g8-Sr4"/>
-                                    <constraint firstAttribute="trailing" secondItem="evx-mT-loi" secondAttribute="trailing" id="uls-IM-cDF"/>
-                                    <constraint firstAttribute="bottom" secondItem="evx-mT-loi" secondAttribute="bottom" id="wcG-M3-myv"/>
+                                    <constraint firstAttribute="bottom" secondItem="evx-mT-loi" secondAttribute="bottom" constant="-123.66666666666663" id="uv1-z6-nKF"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -521,11 +510,26 @@
                         <constraints>
                             <constraint firstItem="M0p-ti-t9p" firstAttribute="width" secondItem="So3-kK-Ufj" secondAttribute="width" id="LgY-Q8-ArY"/>
                             <constraint firstItem="M0p-ti-t9p" firstAttribute="leading" secondItem="So3-kK-Ufj" secondAttribute="leading" id="NV5-th-SEV"/>
+                            <constraint firstItem="M0p-ti-t9p" firstAttribute="bottom" secondItem="Uwd-XC-8WV" secondAttribute="bottom" id="PwE-A0-4dZ"/>
                             <constraint firstItem="evx-mT-loi" firstAttribute="width" secondItem="So3-kK-Ufj" secondAttribute="width" id="V63-Ox-fl8"/>
                             <constraint firstItem="M0p-ti-t9p" firstAttribute="top" secondItem="Uwd-XC-8WV" secondAttribute="top" id="jQb-2s-5cv"/>
-                            <constraint firstItem="M0p-ti-t9p" firstAttribute="height" secondItem="So3-kK-Ufj" secondAttribute="height" multiplier="0.901786" id="pqc-ft-f0W"/>
-                            <constraint firstItem="evx-mT-loi" firstAttribute="height" secondItem="So3-kK-Ufj" secondAttribute="height" multiplier="1.9" priority="300" id="pul-tU-eaF"/>
+                            <constraint firstItem="evx-mT-loi" firstAttribute="height" secondItem="So3-kK-Ufj" secondAttribute="height" multiplier="1.1" priority="250" id="pul-tU-eaF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pul-tU-eaF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="pul-tU-eaF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="pul-tU-eaF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="detailes" id="O4m-lH-KqZ">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Pci-lh-nvV">

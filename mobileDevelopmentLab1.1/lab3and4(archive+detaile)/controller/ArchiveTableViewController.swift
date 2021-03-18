@@ -18,6 +18,8 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
     static var data: [[String]] = [[],[],[],[],[]]
     let booksId: [String] = ["BooksList","9780321856715","9780321862969","9781118841471","9781430236054","9781430237105","9781430238072","9781430245124","9781430260226","9781449308360","9781449342753" ]
     
+    var isVisible: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib.init(nibName: "cell", bundle: nil), forCellReuseIdentifier: "reuseIdentifier")
@@ -33,10 +35,27 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
         search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
         self.navigationItem.searchController = search
+        search.obscuresBackgroundDuringPresentation = false // to scroll table view while searching
+        navigationItem.searchController?.searchBar.placeholder = "Search by title"
         
         ArchiveTableViewController.data = dataFromBL.main()
         index = ArchiveTableViewController.data[0].count
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(insertRow))
+    }
+    
+    @objc func insertRow() {
+        let index = self.index
+        self.tableView.performBatchUpdates({
+            ArchiveTableViewController.data[0].insert(AddNewBookVC.title ,at: index)
+            ArchiveTableViewController.data[1].insert(AddNewBookVC.subtitle ,at: index)
+            ArchiveTableViewController.data[3].insert("$"+AddNewBookVC.price,at: index)
+            ArchiveTableViewController.data[2].insert("no value",at: index)
+            ArchiveTableViewController.data[4].insert("defaultImage",at: index)
+            self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+        }, completion: { result in
+            self.tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: true)
+        })
+
     }
 }
     

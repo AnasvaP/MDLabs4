@@ -24,19 +24,10 @@ class AddNewBookVC: UIViewController {
     }
     
     @IBAction func addNewBook(_ sender: Any) {
-        let index = arVC.index
         AddNewBookVC.title = titleTF.text ?? "no value entered"
         AddNewBookVC.subtitle = subtitleTF.text ?? "no value entered"
         AddNewBookVC.price = priceTF.text ?? "no value entered"
-
-        arVC.tableView.performBatchUpdates({
-            ArchiveTableViewController.data[0].insert(AddNewBookVC.title ,at: index)
-            ArchiveTableViewController.data[1].insert(AddNewBookVC.subtitle ,at: index)
-            ArchiveTableViewController.data[3].insert("$"+AddNewBookVC.price,at: index)
-            ArchiveTableViewController.data[2].insert("no value",at: index)
-            ArchiveTableViewController.data[4].insert("defaultImage",at: index)
-            arVC.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-        }, completion: nil)
+        //arVC.insertRow()
     }
     
 }
