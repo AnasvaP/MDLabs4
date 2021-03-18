@@ -25,15 +25,20 @@ class detailAboutBookViewController: UIViewController {
 
     let dataFromLists = DataDetailedLists()
     static var selectedValue = String()
+    let arVC = ArchiveTableViewController()
 
     override func viewDidLoad() {
         allData = dataFromLists.main()
-        main()
+        if !arVC.searchBarIsEmpty() {
+            main(data: ArchiveTableViewController.filteredData)
+        } else {
+            main(data: allData)
+        }
     }
     
-    func main(){
-        for i in 0..<allData[1].count{
-            if allData[0][i] ==  detailAboutBookViewController.selectedValue {
+    func main(data: [[String]]){
+        for i in 0..<data[0].count{
+            if data[0][i] ==  detailAboutBookViewController.selectedValue {
                 self.titleOutlet.text = allData[0][i]
                 self.subtitleOutlet.text = allData[1][i]
                 if allData[10][i] == "" { self.imageOfBookOutlet.image = UIImage(named: "defaultImage") }

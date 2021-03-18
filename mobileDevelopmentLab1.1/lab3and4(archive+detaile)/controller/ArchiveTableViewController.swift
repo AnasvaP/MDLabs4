@@ -11,7 +11,7 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
     
     @IBOutlet weak var label: UILabel!
     var search = UISearchController()
-    var filteredData: [[String]] = [[],[],[],[],[]]
+    static var filteredData: [[String]] = [[],[],[],[],[]]
     var countOfFilteredBook: Int = 0
     var index = Int()
     let dataFromBL = DataFromBooksList()
@@ -78,7 +78,7 @@ extension ArchiveTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! TableCell
         var dataForCell = [[String]]()
         if isSearching() {
-            dataForCell = filteredData
+            dataForCell = ArchiveTableViewController.filteredData
         } else {
             dataForCell = ArchiveTableViewController.data
         }
@@ -109,7 +109,11 @@ extension ArchiveTableViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailAboutBookViewController") as! detailAboutBookViewController
         self.navigationController?.pushViewController(vc, animated: true)
         let selectedRow = self.tableView.indexPathForSelectedRow!.row
-        detailAboutBookViewController.selectedValue = ArchiveTableViewController.data[0][selectedRow]
+        if !searchBarIsEmpty() {
+            detailAboutBookViewController.selectedValue = ArchiveTableViewController.filteredData[0][selectedRow]
+        } else {
+            detailAboutBookViewController.selectedValue = ArchiveTableViewController.data[0][selectedRow]
+        }
     }
 }
 
@@ -127,19 +131,19 @@ extension ArchiveTableViewController : UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        filteredData = [[],[],[],[],[]]
+        ArchiveTableViewController.filteredData = [[],[],[],[],[]]
         countOfFilteredBook = 0
         for i in 0..<ArchiveTableViewController.data[0].count{
             if  ArchiveTableViewController.data[0][i].lowercased().contains(searchController.searchBar.text!.lowercased()){
                 countOfFilteredBook += 1
                 for j in 0...4{
-                    filteredData[j].append( ArchiveTableViewController.data[j][i])
+                    ArchiveTableViewController.filteredData[j].append( ArchiveTableViewController.data[j][i])
                 }
             }
         }
-        if search.isActive && filteredData[0].count == 0 {
+        if search.isActive && ArchiveTableViewController.filteredData[0].count == 0 {
             label.text = "no result"
-        } else if search.isActive && filteredData[0].count != 0 {
+        } else if search.isActive && ArchiveTableViewController.filteredData[0].count != 0 {
             label.text = "result of the searching"
         } else if !search.isActive{
             label.text = "your books archive"
