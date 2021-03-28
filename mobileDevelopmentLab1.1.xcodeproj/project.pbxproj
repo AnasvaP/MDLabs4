@@ -36,6 +36,8 @@
 		F975834125D2EBC400481377 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975834025D2EBC400481377 /* DrawingView.swift */; };
 		F9834D7525F7ACAD00CA6FB3 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9834D7425F7ACAD00CA6FB3 /* TableCell.swift */; };
 		F9ACF76825F10B3A0002D567 /* AddNewBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ACF76725F10B3A0002D567 /* AddNewBookVC.swift */; };
+		F9BF7BF02604B00500AAD67D /* PhotosCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BF7BEF2604B00500AAD67D /* PhotosCollectionVC.swift */; };
+		F9D627C52608DAF40063FFA8 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D627C42608DAF40063FFA8 /* PhotoCell.swift */; };
 		F9DE36E225EFD16100FC279B /* currentData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE36E125EFD16100FC279B /* currentData2.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		F975834025D2EBC400481377 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		F9834D7425F7ACAD00CA6FB3 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		F9ACF76725F10B3A0002D567 /* AddNewBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBookVC.swift; sourceTree = "<group>"; };
+		F9BF7BEF2604B00500AAD67D /* PhotosCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionVC.swift; sourceTree = "<group>"; };
+		F9D627C42608DAF40063FFA8 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F9DE36E125EFD16100FC279B /* currentData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentData2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +111,7 @@
 				F9153C5025CFE90B009710DC /* ViewController.swift */,
 				F93C999725DA901100825F74 /* lab2(drawing) */,
 				F93C999825DA903600825F74 /* lab3and4(archive+detaile) */,
+				F9BF7BE82604AF6B00AAD67D /* lab5 */,
 				F9153C5525CFE90E009710DC /* Assets.xcassets */,
 				F9153C5725CFE90E009710DC /* LaunchScreen.storyboard */,
 				F9153C5A25CFE90E009710DC /* Info.plist */,
@@ -152,7 +157,6 @@
 		F957C8E225DD0EA9007B9F17 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				F9153C5225CFE90B009710DC /* Main.storyboard */,
 				F902438F26026193007E5083 /* cell.xib */,
 			);
 			path = view;
@@ -185,6 +189,32 @@
 				F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */,
 			);
 			path = additionalFiles;
+			sourceTree = "<group>";
+		};
+		F9BF7BE82604AF6B00AAD67D /* lab5 */ = {
+			isa = PBXGroup;
+			children = (
+				F9BF7BEA2604AF8500AAD67D /* view */,
+				F9BF7BE92604AF7800AAD67D /* controllers */,
+			);
+			path = lab5;
+			sourceTree = "<group>";
+		};
+		F9BF7BE92604AF7800AAD67D /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9BF7BEF2604B00500AAD67D /* PhotosCollectionVC.swift */,
+				F9D627C42608DAF40063FFA8 /* PhotoCell.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		F9BF7BEA2604AF8500AAD67D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F9153C5225CFE90B009710DC /* Main.storyboard */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9BF7BF02604B00500AAD67D /* PhotosCollectionVC.swift in Sources */,
 				F9834D7525F7ACAD00CA6FB3 /* TableCell.swift in Sources */,
 				F9ACF76825F10B3A0002D567 /* AddNewBookVC.swift in Sources */,
 				F93C99B025DAC73E00825F74 /* ArchiveTableViewController.swift in Sources */,
 				F960AE8725EFFD620009FE53 /* ParseDetailedJSON.swift in Sources */,
+				F9D627C52608DAF40063FFA8 /* PhotoCell.swift in Sources */,
 				F9249F3725DC20100096C0B0 /* detailAboutBookViewController.swift in Sources */,
 				F9153C5125CFE90B009710DC /* ViewController.swift in Sources */,
 				F93C99A525DA9EC500825F74 /* currentData.swift in Sources */,

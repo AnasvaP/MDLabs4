@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -157,6 +158,7 @@
                         <segue destination="scQ-Xl-AOp" kind="relationship" relationship="viewControllers" id="ROU-ba-5VI"/>
                         <segue destination="kQd-zK-JTX" kind="relationship" relationship="viewControllers" id="4Zo-Bb-jsm"/>
                         <segue destination="4oP-uU-n0I" kind="relationship" relationship="viewControllers" id="yCa-NL-Qg7"/>
+                        <segue destination="5Nv-MR-L6F" kind="relationship" relationship="viewControllers" id="aeo-0h-MPx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6L-Db-P78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -200,7 +202,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhM-Tn-pOX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2886.9565217391305" y="-778.125"/>
+            <point key="canvasLocation" x="2783" y="-1219"/>
         </scene>
         <!--new book-->
         <scene sceneID="Kig-Dr-1Xh">
@@ -292,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3G0-Nd-8R0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766.666666666667" y="-1044.6428571428571"/>
+            <point key="canvasLocation" x="3581" y="-1418"/>
         </scene>
         <!--detailes-->
         <scene sceneID="mHB-b3-ExG">
@@ -547,7 +549,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulx-5F-PlN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3767" y="-384"/>
+            <point key="canvasLocation" x="4294" y="-1418"/>
         </scene>
         <!--books-->
         <scene sceneID="LSO-Rg-PvI">
@@ -566,10 +568,75 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIg-0Z-qfz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="-778"/>
+            <point key="canvasLocation" x="2041" y="-1234"/>
+        </scene>
+        <!--photos-->
+        <scene sceneID="SnB-q5-zwU">
+            <objects>
+                <collectionViewController storyboardIdentifier="PhotosCollectionVC" id="lb7-ZI-BNc" customClass="PhotosCollectionVC" customModule="mobileDevelopmentLab1_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bb7-xR-sO2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewLayout key="collectionViewLayout" id="HLD-Ui-HG5"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" restorationIdentifier="PhotoCell" reuseIdentifier="photoCell" id="aJG-oZ-uHR" customClass="PhotoCell" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y8N-e4-KcK">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fk-xw-V2a">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageOutlet" destination="0Fk-xw-V2a" id="dFA-yB-ENp"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="lb7-ZI-BNc" id="yav-mx-LYo"/>
+                            <outlet property="delegate" destination="lb7-ZI-BNc" id="CE7-i4-DRZ"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="photos" id="XbU-Wn-fXH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fQW-EA-8fy">
+                            <connections>
+                                <action selector="addBtn:" destination="lb7-ZI-BNc" id="OPf-li-qlG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="487-bb-al2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3692.753623188406" y="-464.0625"/>
+        </scene>
+        <!--photos-->
+        <scene sceneID="4vE-oi-HNY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Nv-MR-L6F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="photos" image="newspaper.fill" catalog="system" id="OtD-RN-LHr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MHN-pt-D9b">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lb7-ZI-BNc" kind="relationship" relationship="rootViewController" id="HWF-8m-2Wk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rj2-tZ-FTE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2900" y="-464"/>
         </scene>
     </scenes>
     <resources>
+        <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="scribble" catalog="system" width="128" height="118"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
