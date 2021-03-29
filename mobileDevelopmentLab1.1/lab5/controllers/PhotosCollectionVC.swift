@@ -21,18 +21,19 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
     
 // MARK: UICollectionViewDataSource
 
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7//arrayOfImage.count
+        return 30//arrayOfImage.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCell
-        cell.imageOutlet.image = #imageLiteral(resourceName: "Image_05") //arrayOfImage[arrayOfImage.count-1]
+        cell.imageOutlet.image = #imageLiteral(resourceName: "leftSwipe@x3")//arrayOfImage[arrayOfImage.count-1]
         cell.clipsToBounds = true
+        cell.backgroundColor = UIColor.gray
         return cell
     }
     
@@ -63,19 +64,56 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
     
     static func createLayout() -> UICollectionViewCompositionalLayout{
         let item = NSCollectionLayoutItem(layoutSize:
-                                            NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                                            NSCollectionLayoutSize(
+                                                widthDimension: .fractionalWidth(2/3),
+                                                heightDimension: .fractionalHeight(1)))
+        
+        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         
         let stackItems = NSCollectionLayoutItem(layoutSize:
-                NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)))
+                                                    NSCollectionLayoutSize(
+                                                        widthDimension: .fractionalWidth(1),
+                                                        heightDimension: .fractionalHeight(0.5)))
+        stackItems.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         
         let stackGroup = NSCollectionLayoutGroup.vertical(layoutSize:
-                NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5)),
-            subitem: stackItems,
-            count: 2)
+                                                            NSCollectionLayoutSize(
+                                                                widthDimension: .fractionalWidth(1/3),
+                                                                heightDimension: .fractionalHeight(1)),
+                                                          subitem: stackItems,
+                                                          count: 2)
         
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/7)),subitems: [item, stackGroup])
+        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize:
+                                                                    NSCollectionLayoutSize(
+                                                                        widthDimension: .fractionalWidth(1),
+                                                                        heightDimension: .fractionalHeight(0.5)),
+                                                                 subitems: [stackGroup,item])
+        
+        let tripletItems = NSCollectionLayoutItem(layoutSize:
+                                                    NSCollectionLayoutSize(
+                                                        widthDimension: .fractionalWidth(1),
+                                                        heightDimension: .fractionalHeight(0.5)))
+        
+        tripletItems.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        
+        let tripletHorizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize:
+                                                                            NSCollectionLayoutSize(
+                                                                                widthDimension: .fractionalWidth(1),
+                                                                                heightDimension: .fractionalHeight(0.5)),
+                                                                        subitem: tripletItems,
+                                                                        count: 3)
        
-        let section = NSCollectionLayoutSection(group: group)
+        let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize:
+                                                                NSCollectionLayoutSize(
+                                                                    widthDimension: .fractionalWidth(1),
+                                                                    heightDimension: .fractionalHeight(3/5)),
+                                                             subitems: [
+                                                            tripletHorizontalGroup,
+                                                                horizontalGroup,
+                                                                tripletHorizontalGroup])
+       
+        verticalGroup.interItemSpacing = .fixed(CGFloat(0))
+        let section = NSCollectionLayoutSection(group: verticalGroup)
         return UICollectionViewCompositionalLayout(section: section)
     }
 }

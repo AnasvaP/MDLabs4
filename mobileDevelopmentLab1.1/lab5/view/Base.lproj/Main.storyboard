@@ -580,19 +580,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="HLD-Ui-HG5"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" restorationIdentifier="PhotoCell" reuseIdentifier="photoCell" id="aJG-oZ-uHR" customClass="PhotoCell" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" restorationIdentifier="PhotoCell" reuseIdentifier="photoCell" id="aJG-oZ-uHR" customClass="PhotoCell" customModule="mobileDevelopmentLab1_1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="146" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y8N-e4-KcK">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="146" height="173"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Fk-xw-V2a">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Fk-xw-V2a">
+                                            <rect key="frame" x="0.0" y="0.0" width="146" height="173"/>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="0Fk-xw-V2a" secondAttribute="trailing" id="Ljo-aT-YkP"/>
+                                        <constraint firstAttribute="bottom" secondItem="0Fk-xw-V2a" secondAttribute="bottom" id="Rd2-hq-eIi"/>
+                                        <constraint firstItem="0Fk-xw-V2a" firstAttribute="leading" secondItem="Y8N-e4-KcK" secondAttribute="leading" id="Uvm-t0-g8v"/>
+                                        <constraint firstItem="0Fk-xw-V2a" firstAttribute="top" secondItem="Y8N-e4-KcK" secondAttribute="top" id="cdd-rk-EAk"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="146" height="173"/>
                                 <connections>
                                     <outlet property="imageOutlet" destination="0Fk-xw-V2a" id="dFA-yB-ENp"/>
                                 </connections>
