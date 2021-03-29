@@ -73,7 +73,7 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
         let stackItems = NSCollectionLayoutItem(layoutSize:
                                                     NSCollectionLayoutSize(
                                                         widthDimension: .fractionalWidth(1),
-                                                        heightDimension: .fractionalHeight(0.5)))
+                                                        heightDimension: .fractionalHeight(1)))
         stackItems.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         
         let stackGroup = NSCollectionLayoutGroup.vertical(layoutSize:
@@ -86,20 +86,20 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
         let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize:
                                                                     NSCollectionLayoutSize(
                                                                         widthDimension: .fractionalWidth(1),
-                                                                        heightDimension: .fractionalHeight(0.5)),
+                                                                        heightDimension: .fractionalHeight(2/3)),
                                                                  subitems: [stackGroup,item])
         
         let tripletItems = NSCollectionLayoutItem(layoutSize:
                                                     NSCollectionLayoutSize(
                                                         widthDimension: .fractionalWidth(1),
-                                                        heightDimension: .fractionalHeight(0.5)))
+                                                        heightDimension: .fractionalHeight(1)))
         
         tripletItems.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         
         let tripletHorizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize:
                                                                             NSCollectionLayoutSize(
                                                                                 widthDimension: .fractionalWidth(1),
-                                                                                heightDimension: .fractionalHeight(0.5)),
+                                                                                heightDimension: .fractionalHeight(1/3)),
                                                                         subitem: tripletItems,
                                                                         count: 3)
        
