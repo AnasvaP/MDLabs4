@@ -33,7 +33,7 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCell
         cell.imageOutlet.image = #imageLiteral(resourceName: "leftSwipe@x3")//arrayOfImage[arrayOfImage.count-1]
         cell.clipsToBounds = true
-        cell.backgroundColor = UIColor.gray
+        cell.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         return cell
     }
     
@@ -106,9 +106,9 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
         let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize:
                                                                 NSCollectionLayoutSize(
                                                                     widthDimension: .fractionalWidth(1),
-                                                                    heightDimension: .fractionalHeight(3/5)),
+                                                                    heightDimension: .fractionalHeight(2/5)),
                                                              subitems: [
-                                                            tripletHorizontalGroup,
+                                                                tripletHorizontalGroup,
                                                                 horizontalGroup,
                                                                 tripletHorizontalGroup])
        

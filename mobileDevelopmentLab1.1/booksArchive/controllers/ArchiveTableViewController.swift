@@ -9,6 +9,7 @@ import UIKit
 
 class ArchiveTableViewController: UITableViewController, UISearchControllerDelegate, UISearchBarDelegate {
     
+
     @IBOutlet weak var label: UILabel!
     var search = UISearchController()
     static var filteredData: [[String]] = [[],[],[],[],[]]
@@ -19,8 +20,10 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
     let booksId: [String] = ["BooksList","9780321856715","9780321862969","9781118841471","9781430236054","9781430237105","9781430238072","9781430245124","9781430260226","9781449308360","9781449342753" ]
     
     var isVisible: Bool = false
+    var networkData: [Books]? = nil
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.tableView.register(UINib.init(nibName: "cell", bundle: nil), forCellReuseIdentifier: "reuseIdentifier")
         
@@ -56,6 +59,7 @@ class ArchiveTableViewController: UITableViewController, UISearchControllerDeleg
             self.tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: true)
         })
     }
+    
 }
     
     
@@ -69,20 +73,23 @@ extension ArchiveTableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching() {
-            return countOfFilteredBook
+            return networkData?.count ?? 0//countOfFilteredBook
         }
         return ArchiveTableViewController.data[0].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! TableCell
-        var dataForCell = [[String]]()
         if isSearching() {
-            dataForCell = ArchiveTableViewController.filteredData
-        } else {
-            dataForCell = ArchiveTableViewController.data
-        }
-        cell.set(data: dataForCell, index: indexPath.row)
+            for i in 0..<networkData!.count{
+                ArchiveTableViewController.filteredData[0].append(networkData?[i].title ?? "")
+                ArchiveTableViewController.filteredData[1].append(networkData?[i].subtitle ?? "")
+                ArchiveTableViewController.filteredData[2].append(networkData?[i].isbn13 ?? "")
+                ArchiveTableViewController.filteredData[3].append(networkData?[i].price ?? "")
+                ArchiveTableViewController.filteredData[4].append(networkData?[i].image ?? "")
+            }
+            cell.set2(data: ArchiveTableViewController.filteredData, index: indexPath.row)
+        } 
         return cell
     }
     
@@ -110,10 +117,7 @@ extension ArchiveTableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         let selectedRow = self.tableView.indexPathForSelectedRow!.row
         if !searchBarIsEmpty() {
-            detailAboutBookViewController.selectedValue = ArchiveTableViewController.filteredData[0][selectedRow]
-        } else {
-            detailAboutBookViewController.selectedValue = ArchiveTableViewController.data[0][selectedRow]
-        }
+            detailAboutBookViewController.selectedValue = ArchiveTableViewController.filteredData[2][selectedRow]}
     }
 }
 
@@ -131,15 +135,23 @@ extension ArchiveTableViewController : UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+        let enteredDataInSearchController: String = searchController.searchBar.text!.lowercased()
         ArchiveTableViewController.filteredData = [[],[],[],[],[]]
         countOfFilteredBook = 0
-        for i in 0..<ArchiveTableViewController.data[0].count{
-            if  ArchiveTableViewController.data[0][i].lowercased().contains(searchController.searchBar.text!.lowercased()){
-                countOfFilteredBook += 1
-                for j in 0...4{
-                    ArchiveTableViewController.filteredData[j].append( ArchiveTableViewController.data[j][i])
+        
+        if enteredDataInSearchController.count > 2 {
+            let network = Network()
+            network.getData(forRequest: enteredDataInSearchController ) {[weak self] (result) in
+                switch result{
+                case .success(let data):
+                    self?.networkData = data.books
+                    self?.tableView.reloadData()
+                case .failure(let error):
+                    print("error = ",error)
                 }
             }
+        } else {
+            ArchiveTableViewController.filteredData = [[],[],[],[],[]]
         }
         if search.isActive && ArchiveTableViewController.filteredData[0].count == 0 {
             label.text = "no result"
@@ -148,6 +160,7 @@ extension ArchiveTableViewController : UISearchResultsUpdating {
         } else if !search.isActive{
             label.text = "your books archive"
         }
-        tableView.reloadData()
     }
 }
+
+
