@@ -93,58 +93,75 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
     
     
     static func createLayout() -> UICollectionViewCompositionalLayout{
-        let item = NSCollectionLayoutItem(layoutSize:
-                                            NSCollectionLayoutSize(
-                                                widthDimension: .fractionalWidth(2/3),
-                                                heightDimension: .fractionalHeight(1)))
-        
-        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-        
-        let stackItems = NSCollectionLayoutItem(layoutSize:
-                                                    NSCollectionLayoutSize(
-                                                        widthDimension: .fractionalWidth(1),
-                                                        heightDimension: .fractionalHeight(1)))
-        stackItems.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-        
-        let stackGroup = NSCollectionLayoutGroup.vertical(layoutSize:
-                                                            NSCollectionLayoutSize(
-                                                                widthDimension: .fractionalWidth(1/3),
-                                                                heightDimension: .fractionalHeight(1)),
-                                                          subitem: stackItems,
-                                                          count: 2)
-        
-        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize:
-                                                                    NSCollectionLayoutSize(
-                                                                        widthDimension: .fractionalWidth(1),
-                                                                        heightDimension: .fractionalHeight(2/3)),
-                                                                 subitems: [stackGroup,item])
-        
-        let tripletItems = NSCollectionLayoutItem(layoutSize:
-                                                    NSCollectionLayoutSize(
-                                                        widthDimension: .fractionalWidth(1),
-                                                        heightDimension: .fractionalHeight(1)))
-        
-        tripletItems.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-        
-        let tripletHorizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize:
-                                                                            NSCollectionLayoutSize(
-                                                                                widthDimension: .fractionalWidth(1),
-                                                                                heightDimension: .fractionalHeight(1/3)),
-                                                                        subitem: tripletItems,
-                                                                        count: 3)
-       
-        let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize:
-                                                                NSCollectionLayoutSize(
-                                                                    widthDimension: .fractionalWidth(1),
-                                                                    heightDimension: .fractionalHeight(2/5)),
-                                                             subitems: [
-                                                                tripletHorizontalGroup,
-                                                                horizontalGroup,
-                                                                tripletHorizontalGroup])
-       
-        verticalGroup.interItemSpacing = .fixed(CGFloat(0))
-        let section = NSCollectionLayoutSection(group: verticalGroup)
-        return UICollectionViewCompositionalLayout(section: section)
-    }
+           let item = NSCollectionLayoutItem(layoutSize:
+                                               NSCollectionLayoutSize(
+                                                   widthDimension: .fractionalWidth(2/3),
+                                                   heightDimension: .fractionalHeight(1)))
+           
+           item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+           
+           let stackItems = NSCollectionLayoutItem(layoutSize:
+                                                       NSCollectionLayoutSize(
+                                                           widthDimension: .fractionalWidth(1),
+                                                           heightDimension: .fractionalHeight(1)))
+           stackItems.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+           
+           let stackGroup = NSCollectionLayoutGroup.vertical(layoutSize:
+                                                               NSCollectionLayoutSize(
+                                                                   widthDimension: .fractionalWidth(1/3),
+                                                                   heightDimension: .fractionalHeight(1)),
+                                                             subitem: stackItems,
+                                                             count: 2)
+           
+           let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize:
+                                                                       NSCollectionLayoutSize(
+                                                                           widthDimension: .fractionalWidth(1),
+                                                                           heightDimension: .fractionalHeight(2/3)),
+                                                                    subitems: [stackGroup,item])
+           
+           let tripletItems = NSCollectionLayoutItem(layoutSize:
+                                                       NSCollectionLayoutSize(
+                                                           widthDimension: .fractionalWidth(1),
+                                                           heightDimension: .fractionalHeight(1)))
+           
+           tripletItems.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+           
+           let tripletHorizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize:
+                                                                               NSCollectionLayoutSize(
+                                                                                   widthDimension: .fractionalWidth(1),
+                                                                                   heightDimension: .fractionalHeight(1/3)),
+                                                                           subitem: tripletItems,
+                                                                           count: 3)
+          
+           let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize:
+                                                                   NSCollectionLayoutSize(
+                                                                       widthDimension: .fractionalWidth(1),
+                                                                       heightDimension: .fractionalWidth(1)),
+                                                                subitems: [
+                                                               tripletHorizontalGroup,
+                                                                   horizontalGroup])
+          
+           verticalGroup.interItemSpacing = .fixed(CGFloat(0))
+           
+           let tripletHorizontalGroup2 = NSCollectionLayoutGroup.horizontal(layoutSize:
+                                                                               NSCollectionLayoutSize(
+                                                                                   widthDimension: .fractionalWidth(1),
+                                                                                   heightDimension: .fractionalHeight(1/4)),
+                                                                           subitem: tripletItems,
+                                                                           count: 3)
+           
+           let verticalGroup2 = NSCollectionLayoutGroup.vertical(layoutSize:
+                                                                   NSCollectionLayoutSize(
+                                                                       widthDimension: .fractionalWidth(1),
+                                                                       heightDimension: .fractionalWidth(4/3)),
+                                                                subitems: [
+                                                               verticalGroup,
+                                                                   tripletHorizontalGroup2])
+          
+           verticalGroup2.interItemSpacing = .fixed(CGFloat(0))
+           
+           let section = NSCollectionLayoutSection(group: verticalGroup2)
+           return UICollectionViewCompositionalLayout(section: section)
+       }
 }
 
