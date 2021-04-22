@@ -61,7 +61,6 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
                 self.tag = 1
                 cell.imageOutlet.imageFromUrl(urlString: arrayOfImage[indexPath.row])
                 activityIndicator.stopAnimating()
-                print("yes")
             }
         cell.clipsToBounds = true
         cell.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
