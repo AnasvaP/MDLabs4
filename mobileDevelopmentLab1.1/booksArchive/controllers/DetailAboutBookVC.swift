@@ -7,7 +7,7 @@
 
 import UIKit
 
-class detailAboutBookViewController: UIViewController {
+class DetailAboutBookVC: UIViewController {
     
     
     @IBOutlet weak var titleOutlet: UILabel!
@@ -21,23 +21,26 @@ class detailAboutBookViewController: UIViewController {
     @IBOutlet weak var ratingOutlet: UILabel!
     @IBOutlet weak var descriptionOutlet: UILabel!
     @IBOutlet weak var priceOutlet: UILabel!
-    var allData: [[String]] = [[],[],[],[],[],[],[],[],[],[],[]]
+    @IBOutlet weak var indicatorActivity: UIActivityIndicatorView!
+    
     var networDetailedData: Detailed? = nil
-
-    let dataFromLists = DataDetailedLists()
     static var selectedValue = String()
     let arVC = ArchiveTableViewController()
 
     override func viewDidLoad() {
         
         let network = Network()
-        network.getDetailedData(forRequest: detailAboutBookViewController.selectedValue ) { (result) in
+        network.getDetailedData(forRequest: DetailAboutBookVC.selectedValue ) { (result) in
             switch result{
             case .success(let data):
                 self.networDetailedData = data
+                self.indicatorActivity.startAnimating()
                 ArchiveTableViewController().tableView.reloadData()
                 if self.arVC.searchBarIsEmpty(){
                     self.main(data: self.networDetailedData!)
+                    DispatchQueue.main.async {
+                        self.indicatorActivity.stopAnimating()
+                    }
                 }
             case .failure(let error):
                 print("error = ",error)
@@ -46,8 +49,7 @@ class detailAboutBookViewController: UIViewController {
     }
     
     func main(data: Detailed){
-        if data.isbn13 ==  detailAboutBookViewController.selectedValue {
-            print("------ ", detailAboutBookViewController.selectedValue)
+        if data.isbn13 ==  DetailAboutBookVC.selectedValue {
             self.titleOutlet.text = data.title
             self.subtitleOutlet.text = data.subtitle
             let urlString = data.image

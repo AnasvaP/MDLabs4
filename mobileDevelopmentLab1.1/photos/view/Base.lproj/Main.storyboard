@@ -299,7 +299,7 @@
         <!--detailes-->
         <scene sceneID="mHB-b3-ExG">
             <objects>
-                <viewController storyboardIdentifier="detailAboutBookViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6aD-Q0-UA0" customClass="detailAboutBookViewController" customModule="mobileDevelopmentLab1_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailAboutBookVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6aD-Q0-UA0" customClass="DetailAboutBookVC" customModule="mobileDevelopmentLab1_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="So3-kK-Ufj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -473,6 +473,11 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="p2s-Oz-VKL"/>
                                                 </constraints>
                                             </imageView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nKB-yJ-oNs">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="985.66666666666663"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -480,9 +485,11 @@
                                             <constraint firstItem="EJE-Px-7R3" firstAttribute="top" secondItem="4W8-B8-J1c" secondAttribute="bottom" constant="20" id="4Mu-vP-pYC"/>
                                             <constraint firstItem="Llg-sk-juK" firstAttribute="top" secondItem="t0Y-xd-iom" secondAttribute="top" id="8Mj-fl-jW1"/>
                                             <constraint firstItem="fmt-hO-exu" firstAttribute="top" secondItem="iUq-WG-mKI" secondAttribute="top" id="DUl-kI-aDp"/>
+                                            <constraint firstItem="nKB-yJ-oNs" firstAttribute="leading" secondItem="evx-mT-loi" secondAttribute="leading" id="HPh-FS-Itn"/>
                                             <constraint firstAttribute="height" constant="985.66666666666663" id="LFr-Os-HwB"/>
                                             <constraint firstItem="GeO-6N-W5p" firstAttribute="top" secondItem="AYG-by-sE3" secondAttribute="top" id="OzR-HN-lef"/>
                                             <constraint firstItem="Rc3-EN-nQD" firstAttribute="top" secondItem="djn-Fg-3Ce" secondAttribute="top" id="SuG-BN-cPU"/>
+                                            <constraint firstAttribute="bottom" secondItem="nKB-yJ-oNs" secondAttribute="bottom" id="UXb-A0-yzV"/>
                                             <constraint firstItem="vHs-Om-z5P" firstAttribute="top" secondItem="jPK-w2-JmX" secondAttribute="top" id="Upy-4I-udj"/>
                                             <constraint firstItem="RJQ-o8-EIo" firstAttribute="bottom" secondItem="EJE-Px-7R3" secondAttribute="bottom" id="V1V-G0-jbt"/>
                                             <constraint firstItem="RJQ-o8-EIo" firstAttribute="leading" secondItem="EJE-Px-7R3" secondAttribute="trailing" constant="5" id="WyT-go-jrD"/>
@@ -490,8 +497,10 @@
                                             <constraint firstItem="RJQ-o8-EIo" firstAttribute="top" secondItem="EJE-Px-7R3" secondAttribute="top" id="arw-lZ-gyK"/>
                                             <constraint firstItem="4W8-B8-J1c" firstAttribute="centerX" secondItem="evx-mT-loi" secondAttribute="centerX" id="gM4-FD-Oay"/>
                                             <constraint firstItem="tlb-Wr-Xga" firstAttribute="top" secondItem="QEa-lX-RPC" secondAttribute="top" id="hDB-oc-R8b"/>
+                                            <constraint firstAttribute="trailing" secondItem="nKB-yJ-oNs" secondAttribute="trailing" id="iEm-Qc-aqe"/>
                                             <constraint firstAttribute="trailing" secondItem="RJQ-o8-EIo" secondAttribute="trailing" constant="5" id="mcB-o9-e6h"/>
                                             <constraint firstItem="wdC-Zd-KWG" firstAttribute="top" secondItem="U4c-Ow-XWj" secondAttribute="top" id="puX-L6-3PE"/>
+                                            <constraint firstItem="nKB-yJ-oNs" firstAttribute="top" secondItem="evx-mT-loi" secondAttribute="top" id="qb9-Eq-aGq"/>
                                             <constraint firstItem="YU5-vZ-NKy" firstAttribute="top" secondItem="a4d-74-JVC" secondAttribute="top" id="qyP-Q3-01j"/>
                                             <constraint firstItem="4W8-B8-J1c" firstAttribute="top" secondItem="evx-mT-loi" secondAttribute="top" constant="20" id="sYp-qE-EPn"/>
                                             <constraint firstItem="phd-pa-g3G" firstAttribute="top" secondItem="TMy-et-mfy" secondAttribute="top" id="sod-iX-PiI"/>
@@ -537,6 +546,7 @@
                         <outlet property="authorsOutlet" destination="IOv-Gn-HYh" id="D3Q-4h-IIs"/>
                         <outlet property="descriptionOutlet" destination="YU5-vZ-NKy" id="hW1-au-LFW"/>
                         <outlet property="imageOfBookOutlet" destination="4W8-B8-J1c" id="a5Y-OE-h4R"/>
+                        <outlet property="indicatorActivity" destination="nKB-yJ-oNs" id="g1i-yk-Jpp"/>
                         <outlet property="isbn13Outlet" destination="fmt-hO-exu" id="00E-vp-22L"/>
                         <outlet property="pagesOutlet" destination="wdC-Zd-KWG" id="h8L-F2-dNa"/>
                         <outlet property="priceOutlet" destination="vHs-Om-z5P" id="yxu-aW-cTW"/>
@@ -549,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ulx-5F-PlN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4294" y="-1418"/>
+            <point key="canvasLocation" x="4292.753623188406" y="-1418.3035714285713"/>
         </scene>
         <!--books-->
         <scene sceneID="LSO-Rg-PvI">

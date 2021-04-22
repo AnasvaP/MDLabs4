@@ -15,13 +15,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="383" height="177"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="L67-o5-HH8">
-                        <rect key="frame" x="0.0" y="0.0" width="383" height="177"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.86506803079746253" green="0.87363306080535819" blue="0.87363306080535819" alpha="0.47420052029439158" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </activityIndicatorView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8cp-xM-5Gr">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
                         <constraints>
@@ -88,11 +81,22 @@
                             <constraint firstItem="5sS-2J-28F" firstAttribute="leading" secondItem="R4i-Ak-5xh" secondAttribute="leading" id="wwM-DY-lYu"/>
                         </constraints>
                     </stackView>
+                    <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="eWX-5P-Xh9">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
+                        <color key="backgroundColor" red="0.86506803080000005" green="0.87363306080000003" blue="0.87363306080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="160" id="12w-jh-SLx"/>
+                            <constraint firstAttribute="width" constant="150" id="9PF-HT-qKw"/>
+                        </constraints>
+                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="R4i-Ak-5xh" firstAttribute="leading" secondItem="8cp-xM-5Gr" secondAttribute="trailing" constant="5" id="43D-nL-Abo"/>
                     <constraint firstItem="8cp-xM-5Gr" firstAttribute="leading" secondItem="837-c3-tjA" secondAttribute="leading" id="5FG-Oz-Mpb"/>
+                    <constraint firstItem="eWX-5P-Xh9" firstAttribute="leading" secondItem="8cp-xM-5Gr" secondAttribute="leading" id="8hA-Pi-tCx"/>
                     <constraint firstAttribute="bottomMargin" secondItem="R4i-Ak-5xh" secondAttribute="bottom" constant="20" id="KR6-Fl-czt"/>
+                    <constraint firstItem="eWX-5P-Xh9" firstAttribute="top" secondItem="8cp-xM-5Gr" secondAttribute="top" id="Qv9-0a-ZYI"/>
                     <constraint firstAttribute="trailingMargin" secondItem="R4i-Ak-5xh" secondAttribute="trailing" id="dZp-3i-hSv"/>
                     <constraint firstItem="8cp-xM-5Gr" firstAttribute="top" secondItem="837-c3-tjA" secondAttribute="top" id="p8R-tH-ZSW"/>
                     <constraint firstItem="R4i-Ak-5xh" firstAttribute="centerY" secondItem="8cp-xM-5Gr" secondAttribute="centerY" id="rWH-dO-AzE"/>
@@ -101,7 +105,7 @@
             <gestureRecognizers/>
             <connections>
                 <outlet property="imageOutlet" destination="8cp-xM-5Gr" id="Euf-8i-YCK"/>
-                <outlet property="indicator" destination="L67-o5-HH8" id="9aT-ag-ofE"/>
+                <outlet property="indicator" destination="eWX-5P-Xh9" id="vKt-D2-2mE"/>
                 <outlet property="isbn13Outlet" destination="lwI-mt-A4x" id="QZL-ac-KtH"/>
                 <outlet property="priceOutlet" destination="5sS-2J-28F" id="3C6-6K-oS1"/>
                 <outlet property="subtitleOutlet" destination="YnR-CV-YAM" id="CIe-nT-aPD"/>

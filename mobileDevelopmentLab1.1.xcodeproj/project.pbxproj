@@ -16,23 +16,8 @@
 		F9153C5625CFE90E009710DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9153C5525CFE90E009710DC /* Assets.xcassets */; };
 		F9153C5925CFE90E009710DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9153C5725CFE90E009710DC /* LaunchScreen.storyboard */; };
 		F91FB3CA26187F2300897648 /* modelDataFromInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91FB3C926187F2300897648 /* modelDataFromInternet.swift */; };
-		F9249F2B25DC1CD50096C0B0 /* 9780321862969.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2125DC1CD40096C0B0 /* 9780321862969.txt */; };
-		F9249F2C25DC1CD50096C0B0 /* 9781449342753.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */; };
-		F9249F2D25DC1CD50096C0B0 /* 9780321856715.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2325DC1CD40096C0B0 /* 9780321856715.txt */; };
-		F9249F2E25DC1CD50096C0B0 /* 9781430237105.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2425DC1CD50096C0B0 /* 9781430237105.txt */; };
-		F9249F2F25DC1CD50096C0B0 /* 9781118841471.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2525DC1CD50096C0B0 /* 9781118841471.txt */; };
-		F9249F3025DC1CD50096C0B0 /* 9781430245124.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2625DC1CD50096C0B0 /* 9781430245124.txt */; };
-		F9249F3125DC1CD50096C0B0 /* 9781430236054.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2725DC1CD50096C0B0 /* 9781430236054.txt */; };
-		F9249F3225DC1CD50096C0B0 /* 9781430238072.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2825DC1CD50096C0B0 /* 9781430238072.txt */; };
-		F9249F3325DC1CD50096C0B0 /* 9781430260226.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2925DC1CD50096C0B0 /* 9781430260226.txt */; };
-		F9249F3425DC1CD50096C0B0 /* 9781449308360.txt in Resources */ = {isa = PBXBuildFile; fileRef = F9249F2A25DC1CD50096C0B0 /* 9781449308360.txt */; };
-		F9249F3725DC20100096C0B0 /* detailAboutBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */; };
-		F93C99A225DA9E0200825F74 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99A125DA9E0200825F74 /* model.swift */; };
-		F93C99A525DA9EC500825F74 /* currentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99A425DA9EC500825F74 /* currentData.swift */; };
-		F93C99A925DAA0BC00825F74 /* BooksList.txt in Resources */ = {isa = PBXBuildFile; fileRef = F93C99A825DAA0BC00825F74 /* BooksList.txt */; };
-		F93C99AC25DAA10C00825F74 /* ParseBooksListJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99AB25DAA10C00825F74 /* ParseBooksListJSON.swift */; };
+		F9249F3725DC20100096C0B0 /* DetailAboutBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9249F3625DC20100096C0B0 /* DetailAboutBookVC.swift */; };
 		F93C99B025DAC73E00825F74 /* ArchiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93C99AF25DAC73E00825F74 /* ArchiveTableViewController.swift */; };
-		F960AE8725EFFD620009FE53 /* ParseDetailedJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960AE8625EFFD610009FE53 /* ParseDetailedJSON.swift */; };
 		F966800925D6E2E000998D5C /* DrawingArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966800825D6E2E000998D5C /* DrawingArcView.swift */; };
 		F975833D25D2EA0C00481377 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975833C25D2EA0C00481377 /* DrawingViewController.swift */; };
 		F975834125D2EBC400481377 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F975834025D2EBC400481377 /* DrawingView.swift */; };
@@ -41,8 +26,6 @@
 		F9BF7BF02604B00500AAD67D /* PhotosCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BF7BEF2604B00500AAD67D /* PhotosCollectionVC.swift */; };
 		F9C349F5261B083700F01A1F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C349F4261B083600F01A1F /* Network.swift */; };
 		F9D627C52608DAF40063FFA8 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D627C42608DAF40063FFA8 /* PhotoCell.swift */; };
-		F9DE36E225EFD16100FC279B /* currentData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE36E125EFD16100FC279B /* currentData2.swift */; };
-		F9E7DEC326244193006675AF /* SpinnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7DEC226244193006675AF /* SpinnerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,23 +42,8 @@
 		F9153C5825CFE90E009710DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9153C5A25CFE90E009710DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F91FB3C926187F2300897648 /* modelDataFromInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelDataFromInternet.swift; sourceTree = "<group>"; };
-		F9249F2125DC1CD40096C0B0 /* 9780321862969.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9780321862969.txt; sourceTree = "<group>"; };
-		F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781449342753.txt; sourceTree = "<group>"; };
-		F9249F2325DC1CD40096C0B0 /* 9780321856715.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9780321856715.txt; sourceTree = "<group>"; };
-		F9249F2425DC1CD50096C0B0 /* 9781430237105.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430237105.txt; sourceTree = "<group>"; };
-		F9249F2525DC1CD50096C0B0 /* 9781118841471.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781118841471.txt; sourceTree = "<group>"; };
-		F9249F2625DC1CD50096C0B0 /* 9781430245124.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430245124.txt; sourceTree = "<group>"; };
-		F9249F2725DC1CD50096C0B0 /* 9781430236054.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430236054.txt; sourceTree = "<group>"; };
-		F9249F2825DC1CD50096C0B0 /* 9781430238072.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430238072.txt; sourceTree = "<group>"; };
-		F9249F2925DC1CD50096C0B0 /* 9781430260226.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781430260226.txt; sourceTree = "<group>"; };
-		F9249F2A25DC1CD50096C0B0 /* 9781449308360.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9781449308360.txt; sourceTree = "<group>"; };
-		F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailAboutBookViewController.swift; sourceTree = "<group>"; };
-		F93C99A125DA9E0200825F74 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
-		F93C99A425DA9EC500825F74 /* currentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentData.swift; sourceTree = "<group>"; };
-		F93C99A825DAA0BC00825F74 /* BooksList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BooksList.txt; sourceTree = "<group>"; };
-		F93C99AB25DAA10C00825F74 /* ParseBooksListJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseBooksListJSON.swift; sourceTree = "<group>"; };
+		F9249F3625DC20100096C0B0 /* DetailAboutBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAboutBookVC.swift; sourceTree = "<group>"; };
 		F93C99AF25DAC73E00825F74 /* ArchiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTableViewController.swift; sourceTree = "<group>"; };
-		F960AE8625EFFD610009FE53 /* ParseDetailedJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseDetailedJSON.swift; sourceTree = "<group>"; };
 		F966800825D6E2E000998D5C /* DrawingArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingArcView.swift; sourceTree = "<group>"; };
 		F975833C25D2EA0C00481377 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		F975834025D2EBC400481377 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
@@ -84,8 +52,6 @@
 		F9BF7BEF2604B00500AAD67D /* PhotosCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionVC.swift; sourceTree = "<group>"; };
 		F9C349F4261B083600F01A1F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F9D627C42608DAF40063FFA8 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		F9DE36E125EFD16100FC279B /* currentData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentData2.swift; sourceTree = "<group>"; };
-		F9E7DEC226244193006675AF /* SpinnerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +130,6 @@
 		F93C999825DA903600825F74 /* booksArchive */ = {
 			isa = PBXGroup;
 			children = (
-				F957C8E625DD106E007B9F17 /* additionalFiles */,
 				F957C8E225DD0EA9007B9F17 /* view */,
 				F957C8E125DD0EA3007B9F17 /* model+network */,
 				F957C8E325DD0EAE007B9F17 /* controllers */,
@@ -175,14 +140,8 @@
 		F957C8E125DD0EA3007B9F17 /* model+network */ = {
 			isa = PBXGroup;
 			children = (
-				F93C99A125DA9E0200825F74 /* model.swift */,
-				F93C99A425DA9EC500825F74 /* currentData.swift */,
-				F9DE36E125EFD16100FC279B /* currentData2.swift */,
-				F93C99AB25DAA10C00825F74 /* ParseBooksListJSON.swift */,
-				F960AE8625EFFD610009FE53 /* ParseDetailedJSON.swift */,
 				F91FB3C926187F2300897648 /* modelDataFromInternet.swift */,
 				F9C349F4261B083600F01A1F /* Network.swift */,
-				F9E7DEC226244193006675AF /* SpinnerVC.swift */,
 			);
 			path = "model+network";
 			sourceTree = "<group>";
@@ -200,28 +159,10 @@
 			children = (
 				F93C99AF25DAC73E00825F74 /* ArchiveTableViewController.swift */,
 				F9ACF76725F10B3A0002D567 /* AddNewBookVC.swift */,
-				F9249F3625DC20100096C0B0 /* detailAboutBookViewController.swift */,
+				F9249F3625DC20100096C0B0 /* DetailAboutBookVC.swift */,
 				F9834D7425F7ACAD00CA6FB3 /* TableCell.swift */,
 			);
 			path = controllers;
-			sourceTree = "<group>";
-		};
-		F957C8E625DD106E007B9F17 /* additionalFiles */ = {
-			isa = PBXGroup;
-			children = (
-				F93C99A825DAA0BC00825F74 /* BooksList.txt */,
-				F9249F2325DC1CD40096C0B0 /* 9780321856715.txt */,
-				F9249F2125DC1CD40096C0B0 /* 9780321862969.txt */,
-				F9249F2525DC1CD50096C0B0 /* 9781118841471.txt */,
-				F9249F2725DC1CD50096C0B0 /* 9781430236054.txt */,
-				F9249F2425DC1CD50096C0B0 /* 9781430237105.txt */,
-				F9249F2825DC1CD50096C0B0 /* 9781430238072.txt */,
-				F9249F2625DC1CD50096C0B0 /* 9781430245124.txt */,
-				F9249F2925DC1CD50096C0B0 /* 9781430260226.txt */,
-				F9249F2A25DC1CD50096C0B0 /* 9781449308360.txt */,
-				F9249F2225DC1CD40096C0B0 /* 9781449342753.txt */,
-			);
-			path = additionalFiles;
 			sourceTree = "<group>";
 		};
 		F9BF7BE82604AF6B00AAD67D /* photos */ = {
@@ -261,7 +202,6 @@
 				F9153C4525CFE90B009710DC /* Sources */,
 				F9153C4625CFE90B009710DC /* Frameworks */,
 				F9153C4725CFE90B009710DC /* Resources */,
-				8FD55966B394DEE72245C3B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,20 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F902439026026193007E5083 /* cell.xib in Resources */,
-				F9249F3325DC1CD50096C0B0 /* 9781430260226.txt in Resources */,
 				F9153C5925CFE90E009710DC /* LaunchScreen.storyboard in Resources */,
-				F9249F3125DC1CD50096C0B0 /* 9781430236054.txt in Resources */,
-				F9249F2E25DC1CD50096C0B0 /* 9781430237105.txt in Resources */,
-				F9249F2D25DC1CD50096C0B0 /* 9780321856715.txt in Resources */,
-				F9249F3425DC1CD50096C0B0 /* 9781449308360.txt in Resources */,
-				F93C99A925DAA0BC00825F74 /* BooksList.txt in Resources */,
-				F9249F2F25DC1CD50096C0B0 /* 9781118841471.txt in Resources */,
-				F9249F3025DC1CD50096C0B0 /* 9781430245124.txt in Resources */,
 				F9153C5625CFE90E009710DC /* Assets.xcassets in Resources */,
 				F9153C5425CFE90B009710DC /* Main.storyboard in Resources */,
-				F9249F3225DC1CD50096C0B0 /* 9781430238072.txt in Resources */,
-				F9249F2B25DC1CD50096C0B0 /* 9780321862969.txt in Resources */,
-				F9249F2C25DC1CD50096C0B0 /* 9781449342753.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,23 +281,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8FD55966B394DEE72245C3B6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mobileDevelopmentLab1.1/Pods-mobileDevelopmentLab1.1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mobileDevelopmentLab1.1/Pods-mobileDevelopmentLab1.1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mobileDevelopmentLab1.1/Pods-mobileDevelopmentLab1.1-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -378,23 +290,17 @@
 			files = (
 				F9BF7BF02604B00500AAD67D /* PhotosCollectionVC.swift in Sources */,
 				F9834D7525F7ACAD00CA6FB3 /* TableCell.swift in Sources */,
-				F9E7DEC326244193006675AF /* SpinnerVC.swift in Sources */,
 				F9ACF76825F10B3A0002D567 /* AddNewBookVC.swift in Sources */,
 				F93C99B025DAC73E00825F74 /* ArchiveTableViewController.swift in Sources */,
-				F960AE8725EFFD620009FE53 /* ParseDetailedJSON.swift in Sources */,
 				F9D627C52608DAF40063FFA8 /* PhotoCell.swift in Sources */,
 				F91FB3CA26187F2300897648 /* modelDataFromInternet.swift in Sources */,
-				F9249F3725DC20100096C0B0 /* detailAboutBookViewController.swift in Sources */,
+				F9249F3725DC20100096C0B0 /* DetailAboutBookVC.swift in Sources */,
 				F9153C5125CFE90B009710DC /* ViewController.swift in Sources */,
-				F93C99A525DA9EC500825F74 /* currentData.swift in Sources */,
-				F9DE36E225EFD16100FC279B /* currentData2.swift in Sources */,
 				F9153C4D25CFE90B009710DC /* AppDelegate.swift in Sources */,
 				F9C349F5261B083700F01A1F /* Network.swift in Sources */,
 				F966800925D6E2E000998D5C /* DrawingArcView.swift in Sources */,
 				F975834125D2EBC400481377 /* DrawingView.swift in Sources */,
 				F9153C4F25CFE90B009710DC /* SceneDelegate.swift in Sources */,
-				F93C99AC25DAA10C00825F74 /* ParseBooksListJSON.swift in Sources */,
-				F93C99A225DA9E0200825F74 /* model.swift in Sources */,
 				F975833D25D2EA0C00481377 /* DrawingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

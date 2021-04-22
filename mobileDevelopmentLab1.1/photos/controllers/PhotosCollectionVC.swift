@@ -11,12 +11,30 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
     
     let constCGFloat: CGFloat = 10
     var numberOfItems : CGFloat = 3
-    var arrayOfImage: [UIImage] = []
+    var arrayOfImage: [String] = []
     let pickerController = UIImagePickerController()
+    var tag : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.collectionViewLayout = PhotosCollectionVC.createLayout()
+        
+        self.getImages()
+    }
+    
+    func getImages(){
+        let network = Network()
+        network.getDataForPhotos(completion: { [weak self] (result) in
+            switch result{
+            case .success(let data):
+                for i in data.hits{
+                    self?.arrayOfImage.append(i.largeImageURL)
+                }
+            case .failure(let error):
+                print("error = ",error)
+            }
+        })
     }
     
 // MARK: UICollectionViewDataSource
@@ -26,12 +44,25 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30//arrayOfImage.count
+        return 27
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCell
-        cell.imageOutlet.image = #imageLiteral(resourceName: "leftSwipe@x3")//arrayOfImage[arrayOfImage.count-1]
+        
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.color = .black
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        cell.contentView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+            if self.arrayOfImage != [] {
+                self.tag = 1
+                cell.imageOutlet.imageFromUrl(urlString: arrayOfImage[indexPath.row])
+                activityIndicator.stopAnimating()
+                print("yes")
+            }
         cell.clipsToBounds = true
         cell.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         return cell
@@ -44,21 +75,21 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
         present(pickerController, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage{
-            collectionView.performBatchUpdates {
-                arrayOfImage.append(image)
-                collectionView.insertItems(at: [IndexPath(row: arrayOfImage.count-1, section: 0)])
-            } completion: { result in }
-        } else{
-            print("error")
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage{
+//            collectionView.performBatchUpdates {
+//                arrayOfImage.append(image)
+//                collectionView.insertItems(at: [IndexPath(row: arrayOfImage.count-1, section: 0)])
+//            } completion: { result in }
+//        } else{
+//            print("error")
+//        }
+//        picker.dismiss(animated: true, completion: nil)
+//    }
+//
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        picker.dismiss(animated: true, completion: nil)
+//    }
     
     
     
@@ -118,30 +149,3 @@ class PhotosCollectionVC: UICollectionViewController, UIImagePickerControllerDel
     }
 }
 
-
-
-
-
-// MARK: UICollectionViewDelegateFlowLayout
-
-//extension PhotosCollectionVC: UICollectionViewDelegateFlowLayout{
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let paddingWidth = constCGFloat * (numberOfItems + 1)
-//        let availableWidth = collectionView.frame.width - paddingWidth
-//        return CGSize(width: availableWidth/numberOfItems, height: availableWidth/numberOfItems)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: constCGFloat, left: constCGFloat, bottom: constCGFloat, right: constCGFloat)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return constCGFloat
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return constCGFloat
-//    }
-//
-//}
